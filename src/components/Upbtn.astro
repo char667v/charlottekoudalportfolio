@@ -2,10 +2,10 @@
 
 ---
 
-<!-- Up Arrow Button -->
+<!-- !-- Up Arrow Button --
 <button
   id="scrollUp"
-  class="group fixed bottom-4 right-4 w-12 h-12 rounded-full bg-seasalt shadow-md flex items-center justify-center hover:bg-[#DDEFFF] focus:outline-none z-50"
+  class="group liquid-button fixed bottom-4 right-4 w-130 h-130 rounded-full bg-seasalt shadow-md flex items-center justify-center hover:bg-[#DDEFFF] focus:outline-none z-50"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -21,46 +21,40 @@
   </svg>
 </button>
 
-<!-- ------------------------------------------------------------------- -->
-<style>
-  .liquid-button {
-    position: relative;
-    overflow: hidden;
-  }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("scrollUp").addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
+ -->
 
-  .liquid-button::before,
-  .liquid-button::after {
-    content: '';
-    position: absolute;
-    background-color: #DDEFFF;
-    width: 200%;
-    height: 200%;
-    border-radius: 40%;
-    transition: transform 0.5s ease-in-out;
-  }
+<!-- Up Arrow Button -->
+<button
+  id="scrollUp"
+  class="liquid-button fixed bottom-4 right-4 flex items-center justify-center 
+    p-[25px_50px] m-[25px] rounded-full border-5 border-[#284cff] 
+    bg-transparent text-white cursor-pointer 
+    transition-colors duration-150 font-bold"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-6 h-6 stroke-[#012B27] group-hover:stroke-[#012B27]"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M19 15l-7-7-7 7"></path>
+  </svg>
+</button>
 
-  .liquid-button::before {
-    top: -50%;
-    left: -50%;
-    transform: scale(0);
-  }
-
-  .liquid-button::after {
-    bottom: -50%;
-    right: -50%;
-    transform: scale(0);
-  }
-
-  .liquid-button:hover::before {
-    transform: scale(1);
-  }
-
-  .liquid-button:hover::after {
-    transform: scale(1);
-  }
-</style>
-
-<!-- ------------------------------------------------------------------- -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("scrollUp").addEventListener("click", () => {
