@@ -1,0 +1,25 @@
+---
+
+const { src, alt = 'Image' } = Astro.props;
+---
+
+<div x-data="{ visible: false }" x-init="window.addEventListener('scroll', () => {
+    const elementTop = $el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (elementTop < windowHeight - 100) {
+      visible = true;
+    }
+  })"
+  :class="{'opacity-0': !visible, 'opacity-100': visible}"
+  class="transition-opacity duration-700 ease-in-out p-10"
+>
+<img src={src} alt={alt}>
+</div>
+
+<style>
+    .transition-opacity {
+        transition: opacity 1.5s ease-in-out;
+    }
+</style>
+
+<script src="//unpkg.com/alpinejs" defer></script>

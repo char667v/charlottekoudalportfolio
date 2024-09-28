@@ -1,0 +1,34 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
+const { title } = Astro.props;
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="../styles/tailwind.css" rel="stylesheet" />
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <title>{Astro.props.title}</title>
+  </head>
+  <body class="">
+    <header class="">
+      <Header />
+    </header>
+
+    <main class="bg-secondarylight">
+      <slot />
+    </main>
+
+    <footer class="bg-primary mt-auto pt-0">
+      <Footer />
+    </footer>
+  </body>
+</html>
+
+<style></style>

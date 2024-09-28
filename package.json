@@ -1,0 +1,29 @@
+{
+  "name": "digital_skraldedag",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.1",
+    "astro": "^4.15.5",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "typescript": "^5.6.2"
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.11"
+  }
+}

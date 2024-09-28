@@ -1,0 +1,49 @@
+---
+const { imageSrc, altText, headline, paragraphText } = Astro.props;
+---
+
+<div class="max-w-[500px] p-4">
+  <div class="hidden sm:flex sm:flex-row sm:space-x-4">
+    <div class="flex flex-col text-left sm:max-w-[60%] mb-4 sm:mb-0">
+      <h2
+        class="text-seasalt text-base sm:text-lg md:text-xl font-semibold mb-3"
+      >
+        {headline}
+      </h2>
+      <p class="text-seasalt max-w-full sm:max-w-[80%]">
+        {paragraphText}
+      </p>
+    </div>
+
+    <div class="flex justify-center items-center sm:ml-4">
+      <div
+        class="w-[110px] h-[110px] sm:w-[90px] sm:h-[90px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]
+                        bg-seasalt bg-opacity-20 flex items-center justify-center rounded-full"
+      >
+        <img src={imageSrc} alt={altText} class="w-full h-full" />
+      </div>
+    </div>
+  </div>
+
+  <div class="block sm:hidden max-w-[300px]">
+    <div class="flex items-center mb-4 space-x-2">
+      <div class="flex flex-col text-left w-full">
+        <h2
+          class="text-seasalt text-base md:text-lg lg:text-xl font-semibold mb-2"
+        >
+          {headline}
+        </h2>
+      </div>
+      <div
+        class="w-[110px] h-[110px] sm:w-[100px] sm:h-[100px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]
+                        bg-seasalt bg-opacity-20 flex items-start justify-center rounded-full"
+      >
+        <img src={imageSrc} alt={altText} class="w-full h-full" />
+      </div>
+    </div>
+
+    <div class="text-seasalt text-base md:text-lg lg:text-xl">
+      {paragraphText}
+    </div>
+  </div>
+</div>

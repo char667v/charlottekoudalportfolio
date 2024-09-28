@@ -1,0 +1,62 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Linkvariant.astro";
+import Upbtn from "../components/Upbtn.astro";
+import Topbanner from "../components/Topbanner.astro";
+import Megafon from "../components/Megafon.astro";
+---
+
+<MainLayout title="Titel">
+  <div class="pt-20"><Topbanner /></div>
+  <h2 class="font-bold text-4xl text-center p-16">Ressourcer</h2>
+
+  <!-- Tilføj en container omkring sektionen -->
+  <div class="relative flex items-center justify-center md:pl-10 min-h-[50vh]">
+    <section
+      class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4 font-semibold max-w-7xl mx-auto pb-48 relative z-10"
+    >
+      <article class="flex flex-col items-start pb-12 z-10">
+        <h3 class="text-xl font-bold mb-4 pl-10">
+          Guidelines til privat personer/firmaer
+        </h3>
+        <div class="flex flex-col items-start gap-y-2 pl-4">
+          <Link btnText="Guidelines for individer" link="#" />
+          <Link btnText="Guidelines for virksomheder" link="#" />
+          <Link btnText="Guidelines for skoler" link="#" />
+          <Link btnText="Guidelines for kommuner" link="#" />
+        </div>
+      </article>
+
+      <article class="flex flex-col items-start pb-12 z-10">
+        <h3 class="text-xl font-bold mb-4 pl-10">
+          Brugsansvisning til digital cleanup
+        </h3>
+        <div class="flex flex-col items-start gap-y-2 pl-4">
+          <Link btnText="Hvordan man renser computeren" link="#" />
+          <Link btnText="Hvordan man rydder op i e-mails" link="#" />
+          <Link btnText="Hvordan man rydder op i tablet" link="#" />
+        </div>
+      </article>
+
+      <article class="flex flex-col items-start pb-12 z-10">
+        <h3 class="text-xl font-bold mb-4 pl-10">Offentligt materiale</h3>
+        <div class="flex flex-col items-start gap-y-2 pl-4">
+          <Link btnText="Deltagerdataindsamling 1" link="#" />
+          <Link btnText="Deltagerdataindsamling 2" link="#" />
+          <Link btnText="Markedsføringsmaterialer" link="#" />
+        </div>
+      </article>
+    </section>
+
+    <!-- Bakker SVG -->
+    <img
+      src="/svg/bakker.svg"
+      alt="bakker"
+      class="w-screen absolute bottom-0 left-0 z-0 object-cover -mb-0 md:-mb-24 lg:-mb-0"
+    />
+  </div>
+  <Upbtn />
+  <Megafon />
+</MainLayout>
+<!-- -------------------------------------------------------- -->
+<style></style>

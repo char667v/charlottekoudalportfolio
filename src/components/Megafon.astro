@@ -1,0 +1,18 @@
+<div
+  x-data="{ active: false, hover: false }"
+  class="fixed bottom-5 left-5 z-50"
+>
+  <a href="#" @click.prevent="active = !active">
+    <img
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+      :src="hover ? (active ? '/svg/alternate-hover.svg' : '/svg/megafon-hover.svg') : (active ? '/svg/alternate.svg' : '/svg/megafon.svg')"
+      :alt="hover ? 'Hovered Image' : 'Default Image'"
+      class="transition-all duration-300 ease-in-out"
+      style="object-fit: contain;"
+    />
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer
+></script>

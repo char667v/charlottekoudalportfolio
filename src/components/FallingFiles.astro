@@ -1,0 +1,26 @@
+
+
+  <!-- Fixed Container for Falling Images -->
+  <div x-data="{ images: ['/svg/document.svg', '/svg/email.svg', '/svg/folder.svg', '/svg/picture.svg', '/svg/video.svg'], currentIndex: 0 }"
+       x-init="setInterval(() => { currentIndex = (currentIndex + 1) % images.length }, 5000)"
+       class="fixed inset-0 flex items-center justify-center pointer-events-none">
+    <img :src="images[currentIndex]" alt="File" class="absolute falling w-20 h-20" />
+  </div>
+      <style>
+         @keyframes fall {
+      0% {
+        transform: translateY(-100vh) translateX(-45vw) scale(1);
+      }
+      50% {
+        transform: translateY(-10vh) translateX(-45vw) scale(1);
+      }
+      100% {
+        transform: translateY(20vh) translateX(-15vw) scale(0);
+      }
+    }
+    .falling {
+      animation: fall 5s infinite;
+    }
+      </style>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>

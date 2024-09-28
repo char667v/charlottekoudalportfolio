@@ -1,0 +1,12 @@
+---
+const link = Astro.props.link;
+const btnText = Astro.props.btnText;
+---
+
+  <a class="btn-link2 text-[#012B27] underline-offset-8 hover:underline inline-flex items-center text-lg" href={link}>
+    {btnText}
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 inline ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <line x1="0" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="1.5"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7" />
+    </svg>
+  </a>

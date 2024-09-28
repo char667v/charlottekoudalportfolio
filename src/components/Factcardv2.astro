@@ -1,0 +1,21 @@
+---
+const { imageSrc, altText, headline, paragraphText } = Astro.props;
+---
+
+<div class={`w-[300px] h-[300px] bg-[#629D97] rounded-[15px] flex flex-col items-center justify-center p-4 
+    sm:w-[275px] sm:h-[350px] sm:rounded-[20px] 
+    md:w-[300px] md:h-[400px] md:rounded-[25px] 
+    lg:w-[325px] lg:h-[450px] lg:rounded-[30px]`}>
+    
+    <img src={imageSrc} alt={altText} 
+         class="w-[80px] h-[80px] mb-4 
+         sm:w-[90px] sm:h-[90px] 
+         md:w-[100px] md:h-[100px] 
+         lg:w-[120px] lg:h-[120px]">
+    
+    <h4 class="text-white text-base sm:text-lg md:text-xl font-semibold mb-2 text-center">{headline}</h4>
+
+    <p class="text-white text-center max-w-[200px] sm:max-w-[225px] md:max-w-[250px]">
+        {paragraphText}
+    </p>
+</div>

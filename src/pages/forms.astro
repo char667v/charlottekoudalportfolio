@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Form from "../components/Form.astro";
+import Topbanner from "../components/Topbanner.astro";
+import Upbtn from "../components/Upbtn.astro";
+---
+
+<MainLayout>
+  <div class="pt-20"><Topbanner /></div>
+  <section class="bg-secondarylight md:relative">
+    <div
+      class="md:flex flex-row-reverse justify-center gap-64 p-12 md:-mb-40 md:relative z-40"
+    >
+      <div class="md:relative z-40"><Form /></div>
+      <div class="md:relative left-10 hidden md:block">
+        <img
+        src="/svg/falling-icons.svg"
+        alt="samling af administrative iconer"
+        class="md:h-72 md:relative md:left-40 md:top-10 animate-float"
+      />
+        <img
+          src="/svg/man-laptop05mline.svg"
+          alt="stående mand med computer i hænderne"
+          class="md:-mb-96 min-w-58"
+        />
+      </div>
+    </div>
+    <img
+      src="/svg/bakker.svg"
+      alt="bakker"
+      class="w-full md:relative z-0 md:z-30"
+    />
+  </section>
+  <Upbtn />
+</MainLayout>
