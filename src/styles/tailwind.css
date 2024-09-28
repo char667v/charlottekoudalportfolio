@@ -32,19 +32,19 @@
 
   .liquid {
     position: absolute;
-    bottom: -50; /* Start from the bottom */
-    left: 50%; /* Center the wave */
-    width: 200%; /* Full width to create wave effect */
-    height: 50%; /* Adjust the initial height for the wave */
-    background-color: rgba(54, 140, 215, 0.7); /* Wave color */
-    z-index: -1; /* Behind the button */
-    border-radius: 50%; /* Rounded corners for a wave effect */
-    transform: translateX(-50%); /* Center the wave */
-    transition: height 0.5s ease-in-out; /* Smooth transition for height */
+    bottom: -50; 
+    left: 50%;
+    width: 200%; 
+    height: 50%; 
+    background-color: rgba(54, 140, 215, 0.7); 
+    z-index: -1;
+    border-radius: 50%; 
+    transform: translateX(-50%); 
+    transition: height 0.5s ease-in-out; 
   }
-
+  /****** wave-effect *******/
   .wave {
-    animation: wave-animation 2.5s ease-in-out infinite; /* Animation for the wave effect */
+    animation: wave-animation 2.5s ease-in-out infinite;
   }
 
   @keyframes wave-animation {
@@ -52,7 +52,7 @@
       transform: translateX(-50%) translateY(0);
     }
     50% {
-      transform: translateX(-50%) translateY(-5px); /* Wave effect */
+      transform: translateX(-50%) translateY(-5px); 
     }
   }
 }
