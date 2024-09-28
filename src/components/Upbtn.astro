@@ -34,6 +34,8 @@
  -->
 
 <!-- Up Arrow Button -->
+<!-- Up Arrow Button -->
+<!-- Up Arrow Button -->
 <button
   id="scrollUp"
   class="liquid-button fixed bottom-4 right-4 flex items-center justify-center 
@@ -41,6 +43,7 @@
     bg-transparent text-white cursor-pointer 
     transition-colors duration-150 font-bold"
 >
+  <div class="liquid wave"></div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="w-6 h-6 stroke-[#012B27] group-hover:stroke-[#012B27]"
@@ -57,7 +60,21 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("scrollUp").addEventListener("click", () => {
+    const button = document.getElementById("scrollUp");
+    const liquid = button.querySelector(".liquid");
+
+    button.addEventListener("mousemove", (e) => {
+      const { width } = button.getBoundingClientRect();
+      const mouseX = e.clientX - button.getBoundingClientRect().left;
+      const fillPercentage = mouseX / width; // Get fill percentage based on mouse position
+      liquid.style.height = `${50 + 50 * fillPercentage}%`; // Fill more based on mouse position
+    });
+
+    button.addEventListener("mouseleave", () => {
+      liquid.style.height = '50%'; // Reset height on mouse leave
+    });
+
+    button.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
         behavior: "smooth",

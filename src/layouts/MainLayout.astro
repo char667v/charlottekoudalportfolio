@@ -1,6 +1,4 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/tailwind.css";
 const { title } = Astro.props;
 ---
@@ -18,17 +16,20 @@ const { title } = Astro.props;
   </head>
   <body class="">
     <header class="">
-      <Header />
+      <!-- Your header content -->
     </header>
 
-    <main class="bg-secondarylight">
+    <main class="custom-main-bg">
       <slot />
     </main>
 
     <footer class="bg-primary mt-auto pt-0">
-      <Footer />
+      <!-- Your footer content -->
     </footer>
   </body>
 </html>
 
-<style></style>
+<!-- ------------------------------------- -->
+<style>
+
+</style>

@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components { /* Base styling for the different buttons */
+@layer base {
+  .custom-main-bg {
+   background-image: url("/public/img/overlay.png"), url("/public/img/bg.png");
+   background-repeat: repeat, no-repeat;
+   background-size: auto, 100% 100%;
+   background-attachment: fixed;
+   overflow-y: scroll;
+  }
+
+  /* Base styling for the different buttons */
   .btn-base {
     @apply px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg transition-all duration-700 ease-in-out mr-8;
   }
@@ -20,54 +29,30 @@
   overflow: hidden;
 }
 
-.liquid-button::before {
-  content: '';
+.liquid {
   position: absolute;
-  top: 0;
-  left: -100%; /* Start off the left side */
-  width: 200%;
-  height: 100%;
-  background-color: rgba(221, 239, 255, 0.7); /* Wave color */
+  bottom: -50; /* Start from the bottom */
+  left: 50%; /* Center the wave */
+  width: 200%; /* Full width to create wave effect */
+  height: 50%; /* Adjust the initial height for the wave */
+  background-color: rgba(54, 140, 215, 0.7); /* Wave color */
   z-index: -1; /* Behind the button */
   border-radius: 50%; /* Rounded corners for a wave effect */
-  transition: left 1.5s ease-in-out; /* Slow transition for entering */
+  transform: translateX(-50%); /* Center the wave */
+  transition: height 0.5s ease-in-out; /* Smooth transition for height */
 }
 
-/* Animation for when hovering in */
-.liquid-button:hover::before {
-  left: 0; /* Move to the center */
+.wave {
+  animation: wave-animation 2.5s ease-in-out infinite; /* Animation for the wave effect */
 }
 
-/* Animation for when hovering out */
-.liquid-button:not(:hover)::before {
-  left: 100%; /* Move off-screen to the right */
-  transition: left 1.5s ease-in-out; /* Slow transition for exiting */
-}
-
-@keyframes wave-in {
-  0% {
-    left: -100%; /* Start off-screen */
-    transform: scale(1.1); /* Slightly larger for a wave effect */
+@keyframes wave-animation {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
   }
   50% {
-    left: 50%; /* Move to the center */
-    transform: scale(1.0); /* Return to original size */
-  }
-  100% {
-    left: 0; /* Center of the button */
+    transform: translateX(-50%) translateY(-5px); /* Wave effect */
   }
 }
 
-@keyframes wave-out {
-  0% {
-    left: 0; /* Start from the center */
-  }
-  50% {
-    left: 50%; /* Move towards the center */
-  }
-  100% {
-    left: 100%; /* Move off-screen to the right */
-  }
 }
-}
-
