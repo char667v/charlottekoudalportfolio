@@ -6,12 +6,9 @@ export default {
 	theme: {
 		colors: {
 			primary: '#6E744C',
-			secondary: '#F6FAFA',
-			hover: '', 
+			secondary: '#FBDEB7',
 			accent: '#FFDA03',
-			grey: {
-				700: '#4A5568',
-			  },
+			grey: { 700: '#4A5568'},
 		  },
 		  extend: {
 			fontFamily: {

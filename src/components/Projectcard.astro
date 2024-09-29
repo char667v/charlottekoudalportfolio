@@ -3,37 +3,34 @@ import Primarybtn from "./Primarybtn.astro"
 ---
 
 <div>
-  
   <h2 class="font-poppins flex justify-center pt-24">LET'S PLAY CARDS</h2>
-  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16">
+  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
 
-    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
-      <div class="hover08 rounded-lg overflow-hidden shadow-lg  shadow-accent max-w-sm mx-auto relative">
+    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card1">
+      <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
           <img src="https://picsum.photos/300/200?image=1024" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
         </figure>
       </div>
     </div>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg  shadow-accent max-w-sm mx-auto relative draggable-card" draggable="true">
+    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card2">
       <figure class="relative">
         <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
       </figure>
     </div>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg  shadow-accent max-w-sm mx-auto relative draggable-card" draggable="true">
+    <!-- <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card3">
       <figure class="relative">
         <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
       </figure>
-    </div>
+    </div> -->
 
   </div>
 
-  <!-- ------------------------------------------------------ -->
+  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
 
-  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8">
-
-    <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
+    <!-- <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
       <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
           <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
@@ -41,13 +38,13 @@ import Primarybtn from "./Primarybtn.astro"
       </div>
     </div>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" draggable="true">
+    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card5">
       <figure class="relative">
         <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
       </figure>
-    </div>
+    </div> -->
 
-    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
+    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card6">
       <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
           <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
@@ -58,61 +55,70 @@ import Primarybtn from "./Primarybtn.astro"
   </div>
 </div>
 
-<!-- ----------------------------------------------------- -->
 <style>
   .draggable-card {
     transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
+    cursor: pointer; /* Show pointer cursor for draggable items */
   }
 
   .draggable-card.dragging {
     opacity: 0.5; /* Reduce opacity when dragging */
     transform: scale(1.05); /* Slightly enlarge the card while dragging */
-  }
-
-  .draggable-card.dropping {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute; /* Position it absolutely while dragging */
+    z-index: 1000; /* Ensure it appears on top */
   }
 </style>
-
-<!-- ------------------------------------------------------ -->
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.draggable-card');
     let draggedCard = null;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    cards.forEach(card => {
-      card.addEventListener('dragstart', function () {
-        draggedCard = this;
-        this.classList.add('dragging');
-        setTimeout(() => {
-          this.style.display = 'none'; // Hide the card temporarily
-        }, 0);
+    // Enable drag-and-drop functionality only on desktop (screen width > 768px)
+    if (window.innerWidth > 768) {
+      cards.forEach(card => {
+        card.addEventListener('mousedown', function (e) {
+          draggedCard = this;
+          offsetX = e.clientX - this.getBoundingClientRect().left;
+          offsetY = e.clientY - this.getBoundingClientRect().top;
+
+          this.classList.add('dragging');
+          
+          // Move the dragged card with mouse movement
+          const mouseMoveHandler = (event) => {
+            this.style.position = 'absolute';
+            this.style.top = (event.clientY - offsetY) + 'px';
+            this.style.left = (event.clientX - offsetX) + 'px';
+          };
+
+          // Stop dragging on mouse up
+          const mouseUpHandler = () => {
+            this.classList.remove('dragging');
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+            
+            // Check for drop target
+            const targetCard = document.elementFromPoint(event.clientX, event.clientY);
+            if (targetCard && targetCard !== draggedCard && targetCard.classList.contains('draggable-card')) {
+              // Swap positions
+              const parent = draggedCard.parentNode;
+              parent.insertBefore(draggedCard, targetCard);
+            }
+
+            // Reset styles
+            this.style.position = '';
+            this.style.top = '';
+            this.style.left = '';
+          };
+
+          document.addEventListener('mousemove', mouseMoveHandler);
+          document.addEventListener('mouseup', mouseUpHandler);
+        });
       });
-
-      card.addEventListener('dragend', function () {
-        setTimeout(() => {
-          this.style.display = 'block'; // Show the card again after drop
-          this.classList.remove('dragging');
-          draggedCard = null;
-        }, 0);
-      });
-
-      card.addEventListener('dragover', function (e) {
-        e.preventDefault();
-      });
-
-      card.addEventListener('drop', function () {
-        if (draggedCard && draggedCard !== this) {
-          const container = this.parentNode;
-          container.insertBefore(draggedCard, this);
-
-          // Smooth transition when the card is dropped
-          draggedCard.classList.add('dropping');
-          setTimeout(() => draggedCard.classList.remove('dropping'), 300);
-        }
-      });
-    });
+    }
   });
+
+  
 </script>
