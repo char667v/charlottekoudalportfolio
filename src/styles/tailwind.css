@@ -11,8 +11,19 @@
     overflow-y: scroll;
   }
 
+  /************ fonts ********************/
+  body {
+    @apply font-poppins;
+  }
+
+  p {
+    @apply font-serif;
+  }
+
+  /* SAKL DU BRUGE DETTE??*/ 
+  
   /* Base styling for the different buttons */
-  .btn-base {
+/*   .btn-base {
     @apply px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg transition-all duration-700 ease-in-out mr-8;
   }
 
@@ -22,9 +33,9 @@
 
   .btn-link2 {
     @apply px-6 py-3 text-sm font-normal tracking-wide transition-all duration-700 ease-in-out mr-8;
-  }
+  } */
 
-  /************ liquid-button ********************/
+  /************ scrollUpBtn ********************/
   .liquid-button {
     position: relative;
     overflow: hidden;
@@ -42,6 +53,7 @@
     transform: translateX(-50%); 
     transition: height 0.5s ease-in-out; 
   }
+  
   /****** wave-effect *******/
   .wave {
     animation: wave-animation 2.5s ease-in-out infinite;

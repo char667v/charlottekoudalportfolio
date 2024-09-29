@@ -5,13 +5,21 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors: {
-			primary:'#F6FAFA',
-			primarylight:'#0D3C2F',
-			secondary:'#629D97',
-			secondarylight:'#DDEFFF',
-			accent:'#FFDA03',
-		},
-		extend: {
+			primary: '#6E744C',
+			secondary: '#F6FAFA',
+			hover: '', 
+			accent: '#FFDA03',
+			grey: {
+				700: '#4A5568',
+			  },
+		  },
+		  extend: {
+			fontFamily: {
+			  poppins: ['Poppins', 'sans-serif'],
+			  lato: ['Lato', 'sans-serif'],
+			  serif: ['Lora', 'serif'],
+			},
+					
 			spacing: {
 				'58': '230px',
 				'100': '25rem',
@@ -29,5 +37,6 @@ export default {
 			},
 		},
 	},
+	variants: {},
 	plugins: [],
 };
