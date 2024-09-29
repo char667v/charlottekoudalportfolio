@@ -32,11 +32,11 @@
       const { width } = button.getBoundingClientRect();
       const mouseX = e.clientX - button.getBoundingClientRect().left;
       const fillPercentage = mouseX / width; // Get fill percentage based on mouse position
-      liquid.style.height = `${80 + 50 * fillPercentage}%`; // Fill more based on mouse position
+      (liquid as HTMLElement).style.height = `${80 + 50 * fillPercentage}%`; // Fill more based on mouse position
     });
 
     button.addEventListener("mouseleave", () => {
-      liquid.style.height = '50%'; // Reset height on mouse leave
+      (liquid as HTMLElement).style.height = '50%'; // Reset height on mouse leave
     });
 
     button.addEventListener("click", () => {

@@ -97,7 +97,7 @@
         e.preventDefault(); // Prevent default behavior
 
         if (draggedCard) {
-          const targetCard = e.target.closest('.draggable-card');
+          const targetCard = (e.target as Element).closest('.draggable-card');
           if (targetCard && targetCard !== draggedCard) {
             this.insertBefore(draggedCard, targetCard); // Insert the dragged card before the target card
           }
