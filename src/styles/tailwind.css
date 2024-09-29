@@ -15,10 +15,20 @@
   body {
     @apply font-poppins;
   }
+  
+  h2 {
+    @apply text-4xl md:text-lg mb-0 uppercase ml-6 pt-24; /* Anvend Tailwind-klasser */
+    color: #6E744C; /* Brug den specifikke farve */
+  }
 
   p {
     @apply font-serif;
   }
+  p {
+      @apply text-lg md:text-lg mb-0 ml-6; /* Anvend Tailwind-klasser */
+      color: #6E744C; /* Brug den specifikke farve */
+    }
+  
 
   /* SAKL DU BRUGE DETTE??*/ 
   

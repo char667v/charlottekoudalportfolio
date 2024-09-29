@@ -3,9 +3,11 @@
 ---
 
 <section>
-  <h2 class="font-poppins flex justify-center pt-24">LET'S PLAY CARDS</h2>
-  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
+  <h3 class="font-poppins flex justify-center pt-24 hidden md:flex">
+  LET'S PLAY CARDS
+</h3>
 
+  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
     <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card1">
       <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
@@ -25,9 +27,9 @@
         <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
       </figure>
     </div>
+  </div>
 
   <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
-
     <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
       <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
@@ -49,9 +51,7 @@
         </figure>
       </div>
     </div>
-
   </div>
-</div>
 </section>
 
 <style>
@@ -85,23 +85,19 @@
 
           this.classList.add('dragging');
           
-          // Move the dragged card with mouse movement
           const mouseMoveHandler = (event) => {
             this.style.position = 'absolute';
             this.style.top = (event.clientY - offsetY) + 'px';
             this.style.left = (event.clientX - offsetX) + 'px';
           };
 
-          // Stop dragging on mouse up
-          const mouseUpHandler = () => {
+          const mouseUpHandler = (event) => {
             this.classList.remove('dragging');
             document.removeEventListener('mousemove', mouseMoveHandler);
             document.removeEventListener('mouseup', mouseUpHandler);
             
-            // Check for drop target
             const targetCard = document.elementFromPoint(event.clientX, event.clientY);
             if (targetCard && targetCard !== draggedCard && targetCard.classList.contains('draggable-card')) {
-              // Swap positions
               const parent = draggedCard.parentNode;
               parent.insertBefore(draggedCard, targetCard);
             }
@@ -118,6 +114,4 @@
       });
     }
   });
-
-  
 </script>
