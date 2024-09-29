@@ -1,58 +1,116 @@
 ---
-
+import Primarybtn from "./Primarybtn.astro"
 ---
+<div>
 
-<div
-  class="flex flex-wrap justify-center gap-8 mx-auto max-w-screen-xl px-4 lg:px-16"
->
-  <div
-    class="bg-[#777e7e] hover:bg-[#4B807A] transform hover:scale-105 transition duration-300 ease-in-out flex flex-col justify-center rounded-3xl p-6 text-center"
-    style="width: 327px; height: 385px;"
-  >
-    <p class="mt-6 mb-2 font-medium text-lg text-[#0D3C2F] leading-loose">
-      Der bruges mere energi ved at udvinde Bitcoin
-    </p>
-    <div class="mb-6 flex justify-center mt-4">
-      <img
-        style=""
-        src="/img/andreas-rasmussen-Iw12lY3koDk-unsplash.jpg"
-        alt="Rensdyr i marken"
-      />
-    </div>
-    <p class="mt-2 mb-2 font-medium text-lg text-[#0D3C2F] leading-loose">
-      end hele New Zealands samlede energiforbrug gennem 365 dage!
-    </p>
-  </div>
+  <h2 class="flex justify-center ">LET'S PLAY CARDS</h2>
+<div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16">
 
-  <div
-    class="bg-[#629D97] hover:bg-[#4B807A] transform hover:scale-105 transition duration-300 ease-in-out flex flex-col justify-center rounded-3xl p-6 text-center"
-    style="width: 327px; height: 385px;"
-  >
-    <p class="mt-10 font-medium text-xl text-[#0D3C2F] leading-loose">
-      Internettet producerer mere end
-    </p>
-    <div class="mb-2 flex justify-center mt-2">
-      <img style="" src="/img/angela-hobbs-uoVh6xLSRQ0-unsplash.jpg" alt="Pingvinger på en klippe" />
-    </div>
-    <p class="mb-16 font-medium text-lg text-[#0D3C2F] leading-loose">
-      tons CO2 hvert år!
-    </p>
-  </div>
-
-  <div
-    class="bg-[#629D97] hover:bg-[#4B807A] transform hover:scale-105 transition duration-300 ease-in-out flex flex-col justify-center rounded-3xl p-6 text-center"
-    style="width: 327px; height: 385px;"
-  >
-    <p class="mt-6 mb-2 font-medium text-lg text-[#0D3C2F] leading-loose">
-      Ubegrænset databrug i dag kræver tre gange mere energi, end alle
-      solpaneler i verden kan producere!
-    </p>
-    <div class="mb-6 flex font-medium justify-center mt-6">
-      <img
-        style=""
-        src="/img/jorge-vasconez-M-dBzCRIzmk-unsplash.jpg"
-        alt="Whale"
-      />
+  <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
+    <div class="hover08 rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto relative">
+      <figure class="relative">
+        <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+      </figure>
     </div>
   </div>
+
+  <div class="hover08 rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto relative draggable-card" draggable="true">
+    <figure class="relative">
+      <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+    </figure>
+  </div>
+
+  <div class="hover08 rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto relative draggable-card" draggable="true">
+    <figure class="relative">
+      <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+    </figure>
+  </div>
+
 </div>
+
+<!-- ------------------------------------------------------ -->
+
+<div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8">
+
+  <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
+    <div class="hover08 rounded-lg overflow-hidden shadow-lg drop-shadow-2xl shadow-accent max-w-sm mx-auto relative">
+      <figure class="relative">
+        <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+      </figure>
+    </div>
+  </div>
+
+  <div class="hover08 rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto relative draggable-card" draggable="true">
+    <figure class="relative">
+      <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+    </figure>
+  </div> 
+  
+  <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" draggable="true">
+    <div class="hover08 rounded-lg overflow-hidden shadow-lg max-w-sm mx-auto relative">
+      <figure class="relative">
+        <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+      </figure>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ----------------------------------------------------- -->
+<style>
+  .draggable-card {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+  
+  .draggable-card.dragging {
+    opacity: 0.5; /* Reduce opacity when dragging */
+    transform: scale(1.05); /* Slightly enlarge the card while dragging */
+  }
+
+  .draggable-card.dropping {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+</style>
+
+<!-- ------------------------------------------------------ -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.draggable-card');
+    let draggedCard = null;
+
+    cards.forEach(card => {
+      card.addEventListener('dragstart', function () {
+        draggedCard = this;
+        this.classList.add('dragging');
+        setTimeout(() => {
+          this.style.display = 'none'; // Hide the card temporarily
+        }, 0);
+      });
+
+      card.addEventListener('dragend', function () {
+        setTimeout(() => {
+          this.style.display = 'block'; // Show the card again after drop
+          this.classList.remove('dragging');
+          draggedCard = null;
+        }, 0);
+      });
+
+      card.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      });
+
+      card.addEventListener('drop', function () {
+        if (draggedCard && draggedCard !== this) {
+          const container = this.parentNode;
+          container.insertBefore(draggedCard, this);
+
+          // Smooth transition when the card is dropped
+          draggedCard.classList.add('dropping');
+          setTimeout(() => draggedCard.classList.remove('dropping'), 300);
+        }
+      });
+    });
+  });
+</script>
