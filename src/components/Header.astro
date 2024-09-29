@@ -11,10 +11,32 @@
     <title>Responsiv Header Menu</title>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const header = document.querySelector("header");
+    
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    
+      function scrollFunction() {
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 20) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+    </script>
+    
     <style>
       /* Add a smooth transition for background change */
       header {
         transition: background-color 0.3s ease;
+      }
+      .scrolled {
+        background-color: #ffffffe9;
+        -webkit-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
+        -moz-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
+        box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
       }
     </style>
   </head>
@@ -69,20 +91,21 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="opacity-100 transform scale-100"
         x-transition:leave-end="opacity-0 transform scale-95"
-        class="lg:hidden bg-primary w-full py-4">
+        class="lg:hidden bg-#ffffffe9 w-full py-4">
 
         <ul class="flex flex-col items-center space-y-6 ">
           <li>
-            <a href="/" class="text-secondary font-serif text-2xl hover:text-accent transition">About</a>
+            <a href="/" class="text-primary font-serif text-2xl hover:text-accent transition">- About -</a>
           </li>
           <li>
-            <a href="/" class="text-secondary font-serif text-2xl hover:text-accent transition">Process</a>
+            <a href="/" class="text-primary font-serif text-2xl hover:text-accent transition">- Process -</a>
           </li>
           <li>
-            <a href="/" class="text-secondary font-serif text-2xl hover:text-accent transition">Contact</a>
+            <a href="/" class="text-primary font-serif text-2xl hover:text-accent transition">- Contact -</a>
           </li>
         </ul>
       </nav>
     </header>
   </body>
 </html>
+

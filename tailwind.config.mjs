@@ -13,7 +13,6 @@ export default {
 		  extend: {
 			fontFamily: {
 			  poppins: ['Poppins', 'sans-serif'],
-			  lato: ['Lato', 'sans-serif'],
 			  serif: ['Lora', 'serif'],
 			},
 					
