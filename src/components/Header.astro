@@ -1,55 +1,38 @@
 ---
-/* import Primarybtn from "../components/Primarybtn.astro"; */
+
 ---
 
-<!-- Navbar --><!doctype html>
+<!-- Navbar -->
+<!doctype html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsiv Header Menu</title>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer
-    ></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+
   <body>
     <!-- Header -->
     <header
       x-data="{ showMenu: false }"
-      class="fixed top-0 left-0 w-full shadow-md z-50"
-    >
-      <div
-        class="flex justify-between items-center max-w-7xl mx-auto px-4 py-4"
-      >
-        <!-- Logo -->
-        <a href="/">
-          <div id="logo" class="flex items-center">
-            <img src="/svg/favicon.svg" alt="Hjem" class="h-10" />
-          </div>
-        </a>
+      class="fixed top-0 left-0 w-full shadow-md z-50">
+      <div class="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">
 
-        <!-- Desktop Menu (kun synlig på store skærme) -->
-        <nav class="hidden lg:flex space-x-6 ml-6">
-          <a
-            href="/"
-            class="text-seasalt font-bold uppercase hover:text-accent transition"
-            >Hjem</a
-          >
-          <a
-            href="/howto"
-            class="text-seasalt font-bold uppercase hover:text-accent transition"
-            >How to</a
-          >
-          <a
-            href="/ressourcer"
-            class="text-seasalt font-bold uppercase hover:text-accent transition"
-            >Ressourcer</a
-          >
-        </nav>
+     <!-- Logo -->
+    <a href="/">
+        <div id="logo" class="flex items-center">
+         <img src="/svg/favicon.svg" alt="Hjem" class="h-16" />
+        </div>
+    </a>
 
-        <!-- <div class="hidden lg:block ml-auto">
-          <Primarybtn btnText="Registrer" link="#" />
-        </div> -->
+    <!-- Desktop Menu (kun synlig på store skærme) -->
+      <nav class="hidden lg:flex space-x-16 ml-6">
+        <a href="/" class="text-#4A5568 font-poppins text-2xl color: #6E744C hover:text-accent transition">About</a>
+        <a href="/howto" class="text-#4A5568 font-poppins text-2xl hover:text-accent transition">Process</a>
+        <a href="/ressourcer" class="text-#4A5568 font-poppins text-2xl hover:text-accent transition">Contact</a>
+    </nav>
 
         <!-- Burger Menu Knappen til mobil -->
         <button
@@ -68,7 +51,7 @@
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M4 6h16M4 12h16m-7 6h7"></path>
+              d="M4 6h20M4 12h20m-7 6h7"></path>
           </svg>
         </button>
       </div>
@@ -84,27 +67,18 @@
         x-transition:leave-end="opacity-0 transform scale-95"
         class="lg:hidden bg-primary w-full py-4">
 
-        <ul class="flex flex-col items-center space-y-4">
+        <ul class="flex flex-col items-left space-y-4 space-x-10">
           <li>
-            <a
-              href="/"
-              class="font-lora hover:text-accent transition"
-              >Hjem</a>
+            <a href="/" class="font-serif hover:text-accent transition">About</a>
           </li>
           <li>
-            <a
-              href="/howto"
-              class="font-lora hover:text-accent transition"
-              >How to</a>
+            <a href="/" class="font-serif hover:text-accent transition">Process</a>
           </li>
           <li>
-            <a
-              href="/ressourcer"
-              class="font-lora hover:text-accent transition"
-              >Ressourcer</a>
+            <a href="/" class="font- hover:text-accent transition">Contact</a>
           </li>
-         <!--  <Primarybtn btnText="Registrer" link="/forms" /> -->
         </ul>
       </nav>
-    </header></body>
+    </header>
+</body>
 </html>
