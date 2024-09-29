@@ -28,22 +28,6 @@
       @apply text-lg md:text-lg mb-0 ml-6; /* Anvend Tailwind-klasser */
       color: #6E744C; /* Brug den specifikke farve */
     }
-  
-
-  /* SAKL DU BRUGE DETTE??*/ 
-  
-  /* Base styling for the different buttons */
-/*   .btn-base {
-    @apply px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg transition-all duration-700 ease-in-out mr-8;
-  }
-
-  .btn-link {
-    @apply px-6 py-3 text-sm font-normal uppercase tracking-wide transition-all duration-700 ease-in-out mr-8;
-  }
-
-  .btn-link2 {
-    @apply px-6 py-3 text-sm font-normal tracking-wide transition-all duration-700 ease-in-out mr-8;
-  } */
 
   /************ scrollUpBtn ********************/
   .liquid-button {

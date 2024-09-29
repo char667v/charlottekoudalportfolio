@@ -15,14 +15,14 @@ const { title } = Astro.props;
 
     <title>{title}</title>
   </head>
-  <body>
+  <body class="custom-main-bg">
     <Header />
 
-    <main class="custom-main-bg">
+    <main>
       <slot />
     </main>
 
-    <footer class="mt-auto pt-0">
+    <footer>
       <Footer />
     </footer> 
   </body>
