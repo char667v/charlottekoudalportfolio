@@ -33,13 +33,13 @@
 </script>
  -->
 
-<!-- Up Arrow Button -->
+<!-- ScrollUpBtn -->
 <button
   id="scrollUp"
   class="liquid-button fixed bottom-8 right-4 flex items-center justify-center 
     p-4 m-4 rounded-full border-dashed border-2 border-[#495489] 
     bg-transparent text-white cursor-pointer 
-    transition-colors duration-150 font-bold"
+    transition-colors duration-100 font-bold"
 >
   <div class="liquid wave"></div>
   <svg
@@ -66,7 +66,7 @@
       const { width } = button.getBoundingClientRect();
       const mouseX = e.clientX - button.getBoundingClientRect().left;
       const fillPercentage = mouseX / width; // Get fill percentage based on mouse position
-      liquid.style.height = `${20 + 50 * fillPercentage}%`; // Fill more based on mouse position
+      liquid.style.height = `${80 + 50 * fillPercentage}%`; // Fill more based on mouse position
     });
 
     button.addEventListener("mouseleave", () => {
