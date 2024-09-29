@@ -1,11 +1,10 @@
 ---
 
 ---
-
 <section>
   <h3 class="font-poppins flex justify-center pt-24 hidden md:flex">
-  LET'S PLAY CARDS
-</h3>
+    LET'S PLAY CARDS
+  </h3>
 
   <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
     <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card1">
@@ -22,33 +21,27 @@
       </figure>
     </div>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card3">
-      <figure class="relative">
-        <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
-      </figure>
-    </div>
-  </div>
+    <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
+      <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
+        <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
+          <figure class="relative">
+            <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+          </figure>
+        </div>
+      </div>
 
-  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
-    <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
-      <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
+      <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card5">
         <figure class="relative">
           <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
         </figure>
       </div>
-    </div>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card5">
-      <figure class="relative">
-        <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
-      </figure>
-    </div>
-
-    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card6">
-      <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
-        <figure class="relative">
-          <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
-        </figure>
+      <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card6">
+        <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
+          <figure class="relative">
+            <img src="img/geranimo-wYy3rvvgjAU-unsplash.jpg" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+          </figure>
+        </div>
       </div>
     </div>
   </div>
@@ -69,49 +62,47 @@
 </style>
 
 <script>
-/*   document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll('.draggable-card');
     let draggedCard = null;
-    let offsetX = 0;
-    let offsetY = 0;
 
-    // Enable drag-and-drop functionality only on desktop (screen width > 768px)
-    if (window.innerWidth > 768) {
-      cards.forEach(card => {
-        card.addEventListener('mousedown', function (e) {
-          draggedCard = this;
-          offsetX = e.clientX - this.getBoundingClientRect().left;
-          offsetY = e.clientY - this.getBoundingClientRect().top;
+    cards.forEach(card => {
+      card.setAttribute('draggable', 'true'); // Make them draggable
 
-          this.classList.add('dragging');
-          
-          const mouseMoveHandler = (event) => {
-            this.style.position = 'absolute';
-            this.style.top = (event.clientY - offsetY) + 'px';
-            this.style.left = (event.clientX - offsetX) + 'px';
-          };
+      card.addEventListener('dragstart', function () {
+        draggedCard = this;
+        setTimeout(() => {
+          this.style.display = 'none'; // Temporarily hide the dragged item
+        }, 0);
+      });
 
-          const mouseUpHandler = (event) => {
-            this.classList.remove('dragging');
-            document.removeEventListener('mousemove', mouseMoveHandler);
-            document.removeEventListener('mouseup', mouseUpHandler);
-            
-            const targetCard = document.elementFromPoint(event.clientX, event.clientY);
-            if (targetCard && targetCard !== draggedCard && targetCard.classList.contains('draggable-card')) {
-              const parent = draggedCard.parentNode;
-              parent.insertBefore(draggedCard, targetCard);
-            }
+      card.addEventListener('dragend', function () {
+        setTimeout(() => {
+          this.style.display = 'block'; // Show the dragged item again
+          draggedCard = null;
+        }, 0);
+      });
+    });
 
-            // Reset styles
-            this.style.position = '';
-            this.style.top = '';
-            this.style.left = '';
-          };
+    // Allow cards to be dropped into the container
+    const container = document.getElementById('cardContainer');
+    
+    // Ensure that the container is defined before adding event listeners
+    if (container) {
+      container.addEventListener('dragover', function (e) {
+        e.preventDefault(); // Prevent default behavior to allow dropping
+      });
 
-          document.addEventListener('mousemove', mouseMoveHandler);
-          document.addEventListener('mouseup', mouseUpHandler);
-        });
+      container.addEventListener('drop', function (e) {
+        e.preventDefault(); // Prevent default behavior
+
+        if (draggedCard) {
+          const targetCard = e.target.closest('.draggable-card');
+          if (targetCard && targetCard !== draggedCard) {
+            this.insertBefore(draggedCard, targetCard); // Insert the dragged card before the target card
+          }
+        }
       });
     }
-  }); */
+  });
 </script>
