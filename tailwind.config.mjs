@@ -8,14 +8,13 @@ export default {
 			primary: '#6E744C',
 			secondary: '#FBDEB7',
 			accent: '#FFDA03',
-			grey: { 700: '#4A5568'},
-		  },
-		  extend: {
+			grey: { 700: '#4A5568' },
+		},
+		extend: {
 			fontFamily: {
-			  poppins: ['Poppins', 'sans-serif'],
-			  serif: ['Lora', 'serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				serif: ['Lora', 'serif'],
 			},
-					
 			spacing: {
 				'58': '230px',
 				'100': '25rem',
