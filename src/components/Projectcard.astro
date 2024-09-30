@@ -1,44 +1,48 @@
----
-
----
 <section>
-  <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
-    <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card1">
+  <div class="flex flex-wrap justify-center gap-6 mx-auto max-w-screen-xl px-4 lg:px-16" id="cardContainer">
+
+    <!-- Card 1 -->
+    <a href="link-to-page1.html" class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card1">
       <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
         <figure class="relative">
-          <img src="img/animation.png" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+          <img src="img/animation.png" alt="Description" class="w-full h-auto object-cover transition duration-300 ease-in-out grayscale md:hover:grayscale-0">
         </figure>
       </div>
-    </div>
+    </a>
 
-    <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card2">
+    <!-- Card 2 -->
+    <a href="https://atk-website.netlify.app/" class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card2">
       <figure class="relative">
-        <img src="img/atk.png" alt="Description" class="max-w-screen-md h-auto justify-center object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+        <img src="img/atk.png" alt="Description" class="max-w-screen-md h-auto justify-center object-cover transition duration-300 ease-in-out grayscale md:hover:grayscale-0">
       </figure>
-    </div>
+    </a>
 
-    <div class="flex flex-wrap justify-center gap-4 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
-      <div class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
+    <div class="flex flex-wrap justify-center gap-6 mx-auto max-w-screen-xl px-4 lg:px-16 pt-8" id="cardContainer2">
+
+      <!-- Card 3 -->
+      <a href="https://digitalskraldedaggr4.netlify.app" class="relative w-full max-w-[600px] h-[485px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card4">
         <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
           <figure class="relative">
-            <img src="img/dcd.png" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+            <img src="img/dcd.png" alt="Description" class="w-full h-auto object-cover transition duration-300 ease-in-out grayscale md:hover:grayscale-0">
           </figure>
         </div>
-      </div>
+      </a>
 
-      <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card5">
+      <!-- Card 4 -->
+      <a href="link-to-page4.html" class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative draggable-card" id="card5">
         <figure class="relative">
-          <img src="img/itmv.png" alt="Description" class="max-w-screen-lg h-auto justify-center object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+          <img src="img/itmv.png" alt="Description" class="max-w-screen-lg h-auto justify-center object-cover transition duration-300 ease-in-out grayscale md:hover:grayscale-0">
         </figure>
-      </div>
+      </a>
 
-      <div class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card6">
+      <!-- Card 5 -->
+      <a href="link-to-page5.html" class="relative w-full max-w-[600px] h-[385px] flex flex-col justify-center rounded-3xl overflow-hidden pt-20 draggable-card" id="card6">
         <div class="hover08 rounded-lg overflow-hidden shadow-lg shadow-accent max-w-sm mx-auto relative">
           <figure class="relative">
-            <img src="img/portfolio.png" alt="Description" class="w-full h-auto object-cover grayscale transition duration-300 ease-in-out hover:grayscale-0">
+            <img src="img/portfolio.png" alt="Description" class="w-full h-auto object-cover transition duration-300 ease-in-out grayscale md:hover:grayscale-0">
           </figure>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -55,6 +59,27 @@
     position: absolute; /* Position it absolutely while dragging */
     z-index: 1000; /* Ensure it appears on top */
   }
+
+  /* Animation to indicate dragging is not allowed on smaller screens */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Prevent dragging and apply shaking animation on mobile */
+  @media (max-width: 768px) {
+    .draggable-card {
+      pointer-events: none; /* Disable all pointer events */
+      /* animation: shake 0.5s infinite;  *//* Add shake animation */
+    }
+    
+    .grayscale {
+      filter: none; /* Override to remove grayscale on mobile */
+    }
+  }
 </style>
 
 <script>
@@ -62,43 +87,60 @@
     const cards = document.querySelectorAll('.draggable-card');
     let draggedCard = null;
 
-    cards.forEach(card => {
-      card.setAttribute('draggable', 'true'); // Make them draggable
+    const initDragAndDrop = () => {
+      cards.forEach(card => {
+        card.setAttribute('draggable', 'true'); // Make them draggable
 
-      card.addEventListener('dragstart', function () {
-        draggedCard = this;
-        setTimeout(() => {
-          this.style.display = 'none'; // Temporarily hide the dragged item
-        }, 0);
+        card.addEventListener('dragstart', function () {
+          draggedCard = this;
+          setTimeout(() => {
+            this.style.display = 'none'; // Temporarily hide the dragged item
+          }, 0);
+        });
+
+        card.addEventListener('dragend', function () {
+          setTimeout(() => {
+            this.style.display = 'block'; // Show the dragged item again
+            draggedCard = null;
+          }, 0);
+        });
       });
 
-      card.addEventListener('dragend', function () {
-        setTimeout(() => {
-          this.style.display = 'block'; // Show the dragged item again
-          draggedCard = null;
-        }, 0);
-      });
-    });
+      // Allow cards to be dropped into the container
+      const container = document.getElementById('cardContainer');
 
-    // Allow cards to be dropped into the container
-    const container = document.getElementById('cardContainer');
-    
-    // Ensure that the container is defined before adding event listeners
-    if (container) {
-      container.addEventListener('dragover', function (e) {
-        e.preventDefault(); // Prevent default behavior to allow dropping
-      });
+      // Ensure that the container is defined before adding event listeners
+      if (container) {
+        container.addEventListener('dragover', function (e) {
+          e.preventDefault(); // Prevent default behavior to allow dropping
+        });
 
-      container.addEventListener('drop', function (e) {
-        e.preventDefault(); // Prevent default behavior
+        container.addEventListener('drop', function (e) {
+          e.preventDefault(); // Prevent default behavior
 
-        if (draggedCard) {
-          const targetCard = (e.target as Element).closest('.draggable-card');
-          if (targetCard && targetCard !== draggedCard) {
-            this.insertBefore(draggedCard, targetCard); // Insert the dragged card before the target card
+          if (draggedCard) {
+            const targetCard = e.target.closest('.draggable-card');
+            if (targetCard && targetCard !== draggedCard) {
+              this.insertBefore(draggedCard, targetCard); // Insert the dragged card before the target card
+            }
           }
-        }
-      });
-    }
+        });
+      }
+    };
+
+    // Check if the screen size is large enough for drag-and-drop
+    const checkScreenSize = () => {
+      if (window.matchMedia("(min-width: 769px)").matches) {
+        initDragAndDrop();
+      } else {
+        // Remove draggable attribute for smaller screens
+        cards.forEach(card => {
+          card.removeAttribute('draggable');
+        });
+      }
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener('resize', checkScreenSize); // Check on resize
   });
 </script>
