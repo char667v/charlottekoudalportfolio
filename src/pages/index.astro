@@ -2,10 +2,11 @@
 import MainLayout from "../layouts/MainLayout.astro";
 // import Projectcard from "../components/Projectcard.astro";
 import Projectcardtest from "../components/Projectcardtest.astro";
+import Skill from "../components/Skill.astro";
 import Upbtn from "../components/Upbtn.astro";
 ---
 
-<MainLayout title="CKoudalPortfolio">
+<MainLayout title="CKbyKoudal">
   <p class="pt-48 ml-24">Charlotte Koudal MMD KEA</p>
   <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24" style="color: #6E744C;">Multimediedesign-studerende</h1>
  
@@ -28,6 +29,44 @@ import Upbtn from "../components/Upbtn.astro";
    I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.</p>
    </div>
    
+   <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 pb-14 text-left">
+     <Skill
+     imageSrc="/svg/figma.svg"
+     alt="Figma icon"
+     altText="foto"
+     headline="Figma"
+     paragraphText="Figma er min trofaste ven. Med Figma skaber jeg hurtigt wireframes og prototyper som gør det overskueligt og visuelt lækkert." paragraphClass="text-left" />
+     <Skill
+     imageSrc="/svg/cc.svg"
+     alt="Adobe Creative Cloud"
+     altText="foto"
+     headline="Adobe CC"
+     paragraphText="I Adobe pakken bruger jeg mest programmerne Photoshop og Illustrator til redigering af billeder og grafisk design. jafkjbkj hahfblhl" />
+     <Skill
+     imageSrc="/svg/vsc.svg"
+     alt="Visual Studio Code icon"
+     altText="foto"
+     headline="Html, Css & Js"
+     paragraphText="Jeg kan også kode hjemmesider fra bunden ved hjælp af HTML 5, CSS 3 og Javascript. Til det bruger jeg programmet Visual Studio Code." />
+     <Skill
+     imageSrc="/svg/codepen.svg"
+     alt="CodePen icon"
+     altText="foto"
+     headline="CodePen"
+     paragraphText="Canva kan utrolig meget. For en multimediedesigner er det et virkelig godt værktøj. Jeg bruger Canva til at lave logoer, mockups, moodboards mm." />
+     <Skill
+     imageSrc="/svg/chatgpt.svg"
+     alt="ChatGpt icon"
+     altText="foto"
+     headline="ChatGpt"
+     paragraphText="Canva kan utrolig meget. For en multimediedesigner er det et virkelig godt værktøj. Jeg bruger Canva til at lave logoer, mockups, moodboards mm." />
+    
+    </div>
+
+
+
+
+
    <h2 class="text-grey-700 text-4xl md:text-l mb-0 uppercase ml-6 pt-24 pb-14" style="color: #6E744C;">Contact</h2>
   <!-- <p class="text-grey-700 text-lg md:text-l mb-0 ml-6" style="color: #6E744C;">Space to feel comfortable you</p> -->
   <Upbtn />
