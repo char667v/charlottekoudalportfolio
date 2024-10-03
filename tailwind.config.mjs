@@ -9,6 +9,7 @@ export default {
 			secondary: '#FBDEB7', /* gul agtig */
 			accent: '#FFDA03',/* neon gul */
 			grey: { 700: '#4A5568' },
+			white: '#fafafa',
 		},
 		extend: {
 			fontFamily: {

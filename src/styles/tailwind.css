@@ -20,6 +20,11 @@
     @apply text-4xl md:text-lg mb-0 uppercase ml-6 pt-24; /* Anvend Tailwind-klasser */
     color: #6E744C; /* Brug den specifikke farve */
   }
+  h3 {
+    @apply md:text-lg mb-0 uppercase ml-6 pt-24; /* Anvend Tailwind-klasser */
+    color: #6E744C; /* Brug den specifikke farve */
+  }
+
 
   p {
     @apply font-serif;
