@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 // import Projectcard from "../components/Projectcard.astro";
 import Projectcardtest from "../components/Projectcardtest.astro";
+import Blob from "../components/Blob.astro";
 import Skill from "../components/Skill.astro";
 import Upbtn from "../components/Upbtn.astro";
 ---
@@ -13,27 +14,35 @@ import Upbtn from "../components/Upbtn.astro";
   <h3 class="ml-24 text-2xl pt-28 flex justify-left" style="color: #FFDA03;">
   LET'S PLAY CARDS! 
 </h3>
-<!-- <p class="ml-24" style="color: #FFDA03;">
-  Or look at recent projects.
-</p> -->
+<h4 class="ml-24 text-sm" style="color: #FFDA03;">
+  Or click at recent projects.
+</h4>
+<div>
+  <img src="/svg/linesolid.svg" alt="curved arrow line" class="h-24 w-24 -mt-8 ml-58 transform scale-x-[-1] -rotate-45">
+</div>
+
+
 
    <Projectcardtest/>
    <!-- <Projectcard /> -->
-   <div class="border-4 border-dashed border-[#36709af5]">
+   <div> <!-- class="border-4 border-dashed border-[#36709af5]"> -->
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">About</h2>
-   <div class="flex flex-wrap justify-center items-stretch h-auto gap-4 p-20">
-    
+   <div class="flex flex-wrap justify-between items-start h-auto gap-4 p-20">
+    <p class="max-w-lg flex-grow"> 
+      I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
+      My experience spans various projects, where I have learned to create visual solutions that capture the essence of a brand and solve user problems. I strive to combine aesthetics and functionality in my designs.
+      I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.
+    </p>
+  
+    <div class="flex items-start">  
+      <Blob class="ml-4"/> <!-- Adjust margin if necessary -->
+    </div>
+  </div>
+  
 
-   <p class="ml-24">I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
-   My experience spans various projects, where I have learned to create visual solutions that capture the essence of a brand and solve user problems. I strive to combine aesthetics and functionality in my designs.
-   I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.
-   </p>
 
-   </div>
-
-   </div>
-
-<div class=" bg-white mt-10 h-130 -pt-16">
+<!-- skill -->
+<div class=" bg-white -mt-96 h-130 -pt-16">
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-28" style="color: #6E744C;">Skills</h2>
 
 <div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6">
@@ -80,13 +89,9 @@ import Upbtn from "../components/Upbtn.astro";
 </div>
 </div>
 
-
-
-
+<!-- contact -->
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-24 pb-14" style="color: #6E744C;">Contact</h2>
-  <!-- <p class="text-grey-700 text-lg md:text-l mb-0 ml-6" style="color: #6E744C;">Space to feel comfortable you</p> -->
+  <p class="text-grey-700 text-lg md:text-l mb-0 ml-6" style="color: #6E744C;">Space to feel comfortable you</p>
   <Upbtn />
-
-
 </MainLayout>
 
