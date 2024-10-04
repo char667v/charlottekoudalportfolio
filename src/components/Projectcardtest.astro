@@ -8,7 +8,7 @@ import itmvImage from "../images/itmv.webp";
 import portfolioImage from "../images/portfolio.webp"; 
 ---
 
-<div class="photos-section bg-white -mt-10 h-64">
+<div class="photos-section bg-white mt-36 h-28">
     <div class="drag-area">
         <div class="cards cursor-grab absolute" style="top:643px; left: 250px;" data-url="https://your-link-here.com">
             <article id="card1">
@@ -67,7 +67,7 @@ import portfolioImage from "../images/portfolio.webp";
 
            // Indstil offsets i forhold til musens position
            const offsetX = e.clientX - draggable.getBoundingClientRect().left;
-           const offsetY = e.clientY - draggable.getBoundingClientRect().top;
+           const offsetY = e.clientY - draggable.getBoundingClientRect().bottom;
 
            draggable.style.cursor = 'grabbing'; // Ændre cursor ved drag
 

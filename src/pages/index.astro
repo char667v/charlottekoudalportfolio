@@ -8,88 +8,84 @@ import Upbtn from "../components/Upbtn.astro";
 ---
 
 <MainLayout title="CKbyKoudal">
-  <p class="pt-48 ml-24">Charlotte Koudal MMD KEA</p>
-  <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24" style="color: #6E744C;">Multimediedesign-studerende</h1>
- 
-  <h3 class="ml-24 text-2xl pt-28 flex justify-left" style="color: #FFDA03;">
-  LET'S PLAY CARDS! 
-</h3>
-<h4 class="ml-24 text-sm" style="color: #FFDA03;">
-  Or click at recent projects.
-</h4>
+  <!-- hero section -->
+  <div>
+   <p class="pt-48 ml-24">Charlotte Koudal MMD KEA</p>
+   <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24" style="color: #6E744C;">Multimediedesign-studerende</h1>
+   <h3 class="ml-24 text-2xl pt-28 flex justify-left" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
+   <h4 class="ml-24 text-sm" style="color: #FFDA03;">Or click at recent projects.</h4>
+   <div>
+    <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-16 ml-72 transform scale-y-[1] scale-x-[-1] -rotate-45">
+   </div>
+  </div>
+
+<!-- Projectcard section -->
 <div>
-  <img src="/svg/linesolid.svg" alt="curved arrow line" class="h-24 w-24 -mt-8 ml-58 transform scale-x-[-1] -rotate-45">
+  <Projectcardtest/>
+  <!-- <Projectcard /> -->
 </div>
 
-
-
-   <Projectcardtest/>
-   <!-- <Projectcard /> -->
-   <div> <!-- class="border-4 border-dashed border-[#36709af5]"> -->
+<!-- About section -->
+<div class="border-4 border-dashed border-[#36709af5]">
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">About</h2>
    <div class="flex flex-wrap justify-between items-start h-auto gap-4 p-20">
-    <p class="max-w-lg flex-grow"> 
-      I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
-      My experience spans various projects, where I have learned to create visual solutions that capture the essence of a brand and solve user problems. I strive to combine aesthetics and functionality in my designs.
-      I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.
-    </p>
-  
+    <p class="max-w-lg flex-grow">I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
+     My experience spans various projects, where I have learned to create visual solutions that capture the essence of a brand and solve user problems. I strive to combine aesthetics and functionality in my designs.
+     I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.</p>
     <div class="flex items-start">  
       <Blob class="ml-4"/> <!-- Adjust margin if necessary -->
     </div>
-  </div>
+   </div>
+</div>
   
-
-
-<!-- skill -->
+<!-- Skill section -->
 <div class=" bg-white -mt-96 h-130 -pt-16">
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-28" style="color: #6E744C;">Skills</h2>
-
-<div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6">
-    <div class="flex-1 max-w-[200px]"> 
+   <div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6">
+     <div class="flex-1 max-w-[200px]"> 
         <Skill
             imageSrc="/svg/figmasort.svg"
             alt="Figma icon"
             altText="foto"
             headline="Figma"
             paragraphText="Figma er min trofaste ven hvor jeg nemt kan lave wireframes og prototyper som er overskuelige og visuelt lækkert til gav for alle i fx. projektarbejde." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
+     </div>
+     <div class="flex-1 max-w-[200px]"> 
         <Skill
             imageSrc="/svg/cc.svg"
             alt="Adobe Creative Cloud"
             altText="foto"
             headline="Adobe CC"
             paragraphText="I Adobe pakken bruger jeg mest programmerne Photoshop og Illustrator til billedredigering, grafik til websites og illustrationer som logoer." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
+     </div>
+     <div class="flex-1 max-w-[200px]"> 
         <Skill
             imageSrc="/svg/svcode.svg"
             alt="Visual Studio Code icon"
             altText="foto"
             headline="Html, Css & Js"
             paragraphText="Jeg kan også kode hjemmesider fra bunden ved hjælp af HTML 5, CSS, Javascript og Tailwind. Til det bruger jeg programmet Visual Studio Code." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
+     </div>
+     <div class="flex-1 max-w-[200px]"> 
         <Skill
             imageSrc="/svg/codepen.svg"
             alt="CodePen icon"
             altText="foto"
             headline="CodePen"
             paragraphText="CodePen bruger jeg til at eksperimentere kreativt med design og hurtigt se resultaterne af mine HTML, CSS og JavaScript-projekter i realtid." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
+     </div>
+     <div class="flex-1 max-w-[200px]"> 
         <Skill
             imageSrc="/svg/chatgpt.svg"
             alt="ChatGpt icon"
             altText="foto"
             headline="ChatGpt"
             paragraphText="ChatGPT er en god inspirationskilde, som effektivt kan hjælpe med idéer til designudfordringer og tekster, mens jeg udvikler mine projekter." />
-    </div>
-</div>
+     </div>
+   </div>
 </div>
 
-<!-- contact -->
+<!-- Contact section -->
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-24 pb-14" style="color: #6E744C;">Contact</h2>
   <p class="text-grey-700 text-lg md:text-l mb-0 ml-6" style="color: #6E744C;">Space to feel comfortable you</p>
   <Upbtn />
