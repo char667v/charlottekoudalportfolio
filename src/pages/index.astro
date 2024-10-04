@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-// import Projectcard from "../components/Projectcard.astro";
 import Projectcardtest from "../components/Projectcardtest.astro";
 import Blob from "../components/Blob.astro";
 import Skill from "../components/Skill.astro";
@@ -22,11 +21,10 @@ import Upbtn from "../components/Upbtn.astro";
 <!-- Projectcard section -->
 <div>
   <Projectcardtest/>
-  <!-- <Projectcard /> -->
 </div>
 
 <!-- About section -->
-<div class="border-4 border-dashed border-[#36709af5]">
+<div> <!-- class="border-4 border-dashed border-[#36709af5]" -->
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">About</h2>
    <div class="flex flex-wrap justify-between items-start h-auto gap-4 p-20">
     <p class="max-w-lg flex-grow">I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
@@ -39,8 +37,9 @@ import Upbtn from "../components/Upbtn.astro";
 </div>
   
 <!-- Skill section -->
-<div class=" bg-white -mt-96 h-130 -pt-16">
-   <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-28" style="color: #6E744C;">Skills</h2>
+<div class="custom-skill-bg">
+<!-- <div class=" bg-white -mt-100 h-128"> -->
+   <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-10 pb-28" style="color: #6E744C;">Skills</h2>
    <div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6">
      <div class="flex-1 max-w-[200px]"> 
         <Skill

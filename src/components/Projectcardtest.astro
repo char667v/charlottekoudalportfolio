@@ -1,5 +1,4 @@
 ---
-// Import af nødvendige billeder
 import { Image } from 'astro:assets'; 
 import animationImage from "../images/animation.webp"; 
 import atkImage from "../images/atk.webp"; 
@@ -7,33 +6,33 @@ import dcdImage from "../images/dcd.webp";
 import itmvImage from "../images/itmv.webp"; 
 import portfolioImage from "../images/portfolio.webp"; 
 ---
-<div class="photos-section bg-white mt-28 h-28">
+<div class="photos-section bg-white mt-32 h-24">
     <div class="drag-area">
-        <div class="cards cursor-grab absolute" style="top:643px; left: 250px;" data-url="https://your-link-here.com">
+        <div class="cards cursor-grab absolute" style="top:-123px; left: 250px;" data-url="https://your-link-here.com">
             <article id="card1">
                 <Image src={atkImage} alt="Cover for mit animationsspil" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)]" style="width: 300px; height: auto;" />
             </article>
         </div>
 
-        <div class="cards cursor-grab absolute" style="top: 670px; left: 1086px;" data-url="https://atk-website.netlify.app/">
+        <div class="cards cursor-grab absolute" style="top: -98px; left: 1086px;" data-url="https://atk-website.netlify.app/">
             <article id="card2">
                 <Image src={animationImage} alt="Cover for mit Arbejdernes Tennis Klub" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)]" style="width: 250px; height: auto;" />
             </article>
         </div>
 
-        <div class="cards cursor-grab absolute" style="top: 535px; left: 646px;" data-url="https://digitalskraldedaggr4.netlify.app">
+        <div class="cards cursor-grab absolute" style="top: -225px; left: 646px;" data-url="https://digitalskraldedaggr4.netlify.app">
             <article id="card3">
                 <Image src={dcdImage} alt="Cover for Digital cleanup day" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)]" style="width: 500px; height: auto;" />
             </article>
         </div>
 
-        <div class="cards cursor-grab absolute" style="top: 700px; left: 500px;" data-url="https://your-link-here.com">
+        <div class="cards cursor-grab absolute" style="top: -60px; left: 500px;" data-url="https://your-link-here.com">
             <article id="card4">
                 <Image src={itmvImage} alt="Cover for I tråd med verden" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)]" style="width: 200px; height: auto;" />
             </article>
         </div>
 
-        <div class="cards cursor-grab absolute" style="top: 725px; left: 104px;" data-url="https://your-link-here.com">
+        <div class="cards cursor-grab absolute" style="top: -33px; left: 104px;" data-url="https://your-link-here.com">
             <article id="card5">
                 <Image src={portfolioImage} alt="Cover for min portfolio" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)]" style="width: 150px; height: auto;" />
             </article>
@@ -42,41 +41,44 @@ import portfolioImage from "../images/portfolio.webp";
 </div>
 
 <style>
-    .cards {
-        position: absolute;
-    }
     .drag-area {
         height: 100vh;
         width: 100vw;
+        position: relative; /* Set position to relative */
+    }
+    .cards {
+        position: absolute;
     }
 </style>
 
 <script>
     const draggables = document.querySelectorAll('.cards');
 
-    draggables.forEach((draggable) => {
-        let linkUrl = draggable.getAttribute('data-url'); // Hent URL fra data-attribut
-        let isDragging = false; // Sporing af om der bliver draget
+    draggables.forEach(draggable => {
+        let linkUrl = draggable.getAttribute('data-link'); // Get link from data attribute
+        let isDragging = false; // Track dragging state
 
         draggable.addEventListener('mousedown', (e) => {
-            e.preventDefault(); // Forhindre standardadfærd
+            e.preventDefault(); // Prevent default behavior to avoid text selection
 
             const dragArea = document.querySelector('.drag-area');
             const dragAreaRect = dragArea.getBoundingClientRect();
 
+            // Set offsets relative to the mouse position
             const offsetX = e.clientX - draggable.getBoundingClientRect().left;
-            const offsetY = e.clientY - draggable.getBoundingClientRect().bottom;
+            const offsetY = e.clientY - draggable.getBoundingClientRect().top;
 
-            draggable.style.cursor = 'grabbing'; // Ændre cursor ved drag
+            draggable.style.cursor = 'grabbing'; // Change cursor on grab
 
+            // Update position immediately on mouse move
             function mouseMoveHandler(e) {
-                e.preventDefault();
-                isDragging = true; // Sæt drag til sand
+                isDragging = true; // Set dragging state to true
 
-                let newX = e.clientX - offsetX;
-                let newY = e.clientY - offsetY;
+                // Calculate new position
+                let newX = e.clientX - offsetX; // Adjust for drag area position
+                let newY = e.clientY - offsetY; // Adjust for drag area position
 
-                // Begræns positionen inden for drag området
+                // Constrain the position within the drag area
                 newX = Math.max(0, Math.min(newX, dragAreaRect.width - draggable.offsetWidth));
                 newY = Math.max(0, Math.min(newY, dragAreaRect.height - draggable.offsetHeight));
 
@@ -89,14 +91,17 @@ import portfolioImage from "../images/portfolio.webp";
                 document.removeEventListener('mousemove', mouseMoveHandler);
                 document.removeEventListener('mouseup', mouseUpHandler);
 
+                // Check if it was a click, if not, do not open the link
                 if (!isDragging) {
-                    window.open(linkUrl, '_blank'); // Åbn link i nyt vindue
+                    window.open(linkUrl, '_blank'); // Open the link in a new tab
                 }
-                isDragging = false; // Reset drag state
+                isDragging = false; // Reset dragging state
             }
 
+            // Immediately start moving on mousedown
             document.addEventListener('mousemove', mouseMoveHandler);
             document.addEventListener('mouseup', mouseUpHandler);
         });
     });
 </script>
+
