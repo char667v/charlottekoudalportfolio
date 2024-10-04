@@ -7,8 +7,7 @@ import dcdImage from "../images/dcd.webp";
 import itmvImage from "../images/itmv.webp"; 
 import portfolioImage from "../images/portfolio.webp"; 
 ---
-
-<div class="photos-section bg-white mt-36 h-28">
+<div class="photos-section bg-white mt-28 h-28">
     <div class="drag-area">
         <div class="cards cursor-grab absolute" style="top:643px; left: 250px;" data-url="https://your-link-here.com">
             <article id="card1">
@@ -53,54 +52,51 @@ import portfolioImage from "../images/portfolio.webp";
 </style>
 
 <script>
-   const draggables = document.querySelectorAll('.cards');
+    const draggables = document.querySelectorAll('.cards');
 
-   draggables.forEach(draggable => {
-       let linkUrl = draggable.getAttribute('data-url'); // Hent URL fra data-attribut
-       let isDragging = false; // Sporing af om der bliver draget
+    draggables.forEach((draggable) => {
+        let linkUrl = draggable.getAttribute('data-url'); // Hent URL fra data-attribut
+        let isDragging = false; // Sporing af om der bliver draget
 
-       draggable.addEventListener('mousedown', (e) => {
-           e.preventDefault(); // Forhindre standardadfærd
+        draggable.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Forhindre standardadfærd
 
-           const dragArea = document.querySelector('.drag-area');
-           const dragAreaRect = dragArea.getBoundingClientRect();
+            const dragArea = document.querySelector('.drag-area');
+            const dragAreaRect = dragArea.getBoundingClientRect();
 
-           // Indstil offsets i forhold til musens position
-           const offsetX = e.clientX - draggable.getBoundingClientRect().left;
-           const offsetY = e.clientY - draggable.getBoundingClientRect().bottom;
+            const offsetX = e.clientX - draggable.getBoundingClientRect().left;
+            const offsetY = e.clientY - draggable.getBoundingClientRect().bottom;
 
-           draggable.style.cursor = 'grabbing'; // Ændre cursor ved drag
+            draggable.style.cursor = 'grabbing'; // Ændre cursor ved drag
 
-           function mouseMoveHandler(e) {
-               e.preventDefault();
-               isDragging = true; // Sæt drag til sand
+            function mouseMoveHandler(e) {
+                e.preventDefault();
+                isDragging = true; // Sæt drag til sand
 
-               // Beregn ny position
-               let newX = e.clientX - offsetX;
-               let newY = e.clientY - offsetY;
+                let newX = e.clientX - offsetX;
+                let newY = e.clientY - offsetY;
 
-               // Begræns positionen inden for drag området
-               newX = Math.max(0, Math.min(newX, dragAreaRect.width - draggable.offsetWidth));
-               newY = Math.max(0, Math.min(newY, dragAreaRect.height - draggable.offsetHeight));
+                // Begræns positionen inden for drag området
+                newX = Math.max(0, Math.min(newX, dragAreaRect.width - draggable.offsetWidth));
+                newY = Math.max(0, Math.min(newY, dragAreaRect.height - draggable.offsetHeight));
 
-               draggable.style.left = newX + 'px';
-               draggable.style.top = newY + 'px';
-           }
+                draggable.style.left = newX + 'px';
+                draggable.style.top = newY + 'px';
+            }
 
-           function mouseUpHandler() {
-               draggable.style.cursor = 'grab'; // Reset cursor
-               document.removeEventListener('mousemove', mouseMoveHandler);
-               document.removeEventListener('mouseup', mouseUpHandler);
+            function mouseUpHandler() {
+                draggable.style.cursor = 'grab'; // Reset cursor
+                document.removeEventListener('mousemove', mouseMoveHandler);
+                document.removeEventListener('mouseup', mouseUpHandler);
 
-               // Tjek om det var et klik, hvis ikke, åbner ikke linket
-               if (!isDragging) {
-                   window.open(linkUrl, '_blank'); // Åbn link i nyt vindue
-               }
-               isDragging = false; // Reset drag state
-           }
+                if (!isDragging) {
+                    window.open(linkUrl, '_blank'); // Åbn link i nyt vindue
+                }
+                isDragging = false; // Reset drag state
+            }
 
-           document.addEventListener('mousemove', mouseMoveHandler);
-           document.addEventListener('mouseup', mouseUpHandler);
-       });
-   });
+            document.addEventListener('mousemove', mouseMoveHandler);
+            document.addEventListener('mouseup', mouseUpHandler);
+        });
+    });
 </script>
