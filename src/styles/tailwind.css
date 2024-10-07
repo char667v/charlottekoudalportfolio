@@ -18,6 +18,9 @@
     overflow-y: scroll;
   }
 
+  .custom-white-bg {
+    background-color:chocolate;
+  }
   /************ fonts ********************/
   body {
     @apply font-poppins;
@@ -41,7 +44,7 @@
       color: #6E744C; /* Brug den specifikke farve */
     }
 
-    .blob-custom {
+  .blob-custom {
       position: relative; /* or absolute if you want to position it within a parent */
       top: -280px; /* Adjust the value to move the blob higher */
     }
