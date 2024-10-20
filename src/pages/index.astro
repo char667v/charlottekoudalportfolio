@@ -9,14 +9,23 @@ import Upbtn from "../components/Upbtn.astro";
 <MainLayout title="CKbyKoudal">
   <div class=" main">
   <!-- hero section -->
-  <div>
-   <p class="pt-48 ml-24">Charlotte Koudal MMD KEA</p>
-   <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24" style="color: #6E744C;">Multimediedesign-studerende</h1>
-   <h3 class="ml-24 text-2xl pt-28 flex justify-left" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
-   <h4 class="ml-24 text-sm" style="color: #FFDA03;">Or click at recent projects.</h4>
-   <div>
-    <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-16 ml-72 transform scale-y-[1] scale-x-[-1] -rotate-45">
-   </div>
+    <!-- hero section -->
+    <div>
+      <!-- Mobile Version -->
+      <p class="pt-40 ml-[4.4rem] md:hidden">Charlotte Koudal MMD KEA</p>
+      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-[4.4rem] md:hidden" style="color: #6E744C;">Multimediedesign-studerende</h1>
+      <h3 class="ml-[4.4rem] text-xl pt-20 md:hidden" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
+      <h4 class="ml-[4.4rem] text-sm md:hidden" style="color: #FFDA03;">Or click at recent projects.</h4>
+  
+      <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-[2.2rem] ml-52 transform scale-y-[1] scale-x-[-1] -rotate-45 md:hidden">
+  
+      <!-- Desktop Version -->
+      <p class="pt-48 ml-[6.4rem] hidden md:block">Charlotte Koudal MMD KEA</p>
+      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24 hidden md:block" style="color: #6E744C;">Multimediedesign-studerende</h1>
+      <h3 class="ml-[6.4rem] text-2xl pt-28 hidden md:block" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
+      <h4 class="ml-[6.4rem] text-sm hidden md:block" style="color: #FFDA03;">Or click at recent projects.</h4>
+  
+      <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-[2.2rem] ml-58 transform scale-y-[1] scale-x-[-1] -rotate-45 hidden md:block">
   </div>
 
 <!-- Projectcard section -->
@@ -100,9 +109,9 @@ import Upbtn from "../components/Upbtn.astro";
 
   
 <!-- Skill bg -->
-<div class="custom-skill-bg h-130">
+<div class="custom-skill-bg min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[90vh]"></div>
 
-</div>
+
 
 <!-- Contact section -->
    <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-24 pb-14" style="color: #6E744C;">Contact</h2>

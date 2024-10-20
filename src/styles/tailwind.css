@@ -13,11 +13,19 @@
   .custom-skill-bg {
     background-image: url("/img/overlay.png"), url("/img/bg2.png");
     background-repeat: repeat, no-repeat;
-    background-size: auto, 100% 100%;
+    background-size: auto, cover;
     background-attachment: fixed;
     overflow-y: scroll;
   }
-
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .custom-skill-bg {
+      background-size: auto, contain;  /* Change to 'contain' for better scaling on mobile */
+      background-attachment: scroll;   /* Disable fixed background to avoid mobile issues */
+    }
+  }
+  
   .custom-white-bg {
     background-color:chocolate;
   }
