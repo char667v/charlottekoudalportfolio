@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Projectcardtest from "../components/Projectcardtest.astro";
+import Linkedbtn from "../components/Linkedbtn.astro";
 import Blob from "../components/Blob.astro";
 import Skill from "../components/Skill.astro";
 import Upbtn from "../components/Upbtn.astro";
@@ -13,7 +14,7 @@ import Upbtn from "../components/Upbtn.astro";
     <div>
       <!-- Mobile Version -->
       <p class="pt-40 ml-[4.4rem] md:hidden">Charlotte Koudal MMD KEA</p>
-      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-[4.4rem] md:hidden" style="color: #6E744C;">Multimediedesign-studerende</h1>
+      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-[4.4rem] md:hidden" style="color: #6E744C;">Multimediadesign-student</h1>
       <h3 class="ml-[4.4rem] text-xl pt-20 md:hidden" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
       <h4 class="ml-[4.4rem] text-sm md:hidden" style="color: #FFDA03;">Or click at recent projects.</h4>
   
@@ -21,7 +22,7 @@ import Upbtn from "../components/Upbtn.astro";
   
       <!-- Desktop Version -->
       <p class="pt-48 ml-[6.4rem] hidden md:block">Charlotte Koudal MMD KEA</p>
-      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24 hidden md:block" style="color: #6E744C;">Multimediedesign-studerende</h1>
+      <h1 class="text-4xl md:text-8xl mb-0 uppercase ml-24 hidden md:block" style="color: #6E744C;">Multimediadesign-student</h1>
       <h3 class="ml-[6.4rem] text-2xl pt-28 hidden md:block" style="color: #FFDA03;">LET'S PLAY CARDS!</h3>
       <h4 class="ml-[6.4rem] text-sm hidden md:block" style="color: #FFDA03;">Or click at recent projects.</h4>
   
@@ -34,7 +35,7 @@ import Upbtn from "../components/Upbtn.astro";
 </div>
 
 <!-- bg white -->
-<div class="custom-white-bg h-24 -mt-24  border-block-end-width"></div>
+<div class="custom-white-bg h-24 mt-14  border-block-end-width"></div>
 
 <!-- Skill bg -->
 <!-- <div class="custom-skill-bg h-24 -mt-24"> -->
@@ -42,28 +43,72 @@ import Upbtn from "../components/Upbtn.astro";
 </div>
 
 <!-- About section -->
-<div> <!-- class="border-4 border-dashed border-[#36709af5]" -->
-   <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">About</h2>
-   <div class="flex flex-wrap justify-between items-start h-auto gap-4 p-20">
-    <p class="max-w-lg flex-grow">I am a multimedia design student in my 3rd semester at KEA, with a lifelong passion for art and design. Over the years, I have developed skills in both traditional and digital design methods.
-     My experience spans various projects, where I have learned to create visual solutions that capture the essence of a brand and solve user problems. 
-     <br>
-     I strive to combine aesthetics and functionality in my designs.
-     I am seeking an internship where I can explore new techniques and gain practical experience while challenging the boundaries of design to deliver meaningful and valuable solutions.
-     <a href="your linked in" target="_blank">
-      <button class="bg-white text-green-500 font-poppins rounded-full py-3 px-8 hover:bg-green-500 transition">
-        Find mig på LinkedIn!
-      </button>
-    </a>
-     </p>
-     <div class="flex items-start">  
-      <Blob class="ml-4"/> <!-- Adjust margin if necessary -->
+<div class="grid grid-cols-1 lg:grid-cols-2 pt-10 md:pb-32 pb-20 px-8 md:px-16 lg:px-32 xl:px-64 md:gap-10 gap-6">
+  
+  <!-- Mobile Layout -->
+  <div class="block lg:hidden">
+    <div class="flex justify-center items-center pt-0">
+      <h2 class="text-5xl md:text-4xl mb-0 uppercase -ml-[1rem] -mt-4" style="color: #6E744C;">Who</h2>
+      <h2 class="font-serif text-2xl md:text-4xl mb-0 lowercase ml-4" style="color: #FFDA03;">
+        am <span style="text-transform: uppercase;">I</span> in the world?
+      </h2>
+      
     </div>
-   </div>
+    <div>
+      <h2 class="font-serif text-2xl md:text-l mb-0 lowercase ml-[2.4rem] pt-2 pb-0" style="color: #FFDA03;">.. and what are my aspirations?</h2>
+    </div>
+    
+    <div class="flex justify-center md:items-center items-start pt-28">  
+      <Blob class="ml-0"/> <!-- Adjust margin to bring it closer -->
+    </div>
+    
+    <div class="flex flex-wrap h-auto gap-4 ml-[2.4rem] -mt-100"> <!-- Adjust negative margin to bring the paragraph closer -->
+      <div class="flex flex-col justify-end items-center">
+        <p class="max-w-lg flex-grow ml-0">I am a multimedia design student in my 3rd semester at KEA, driven by a lifelong passion for art and design. Through my studies, I have developed skills in digital design methods, gaining experience in user-oriented web solutions, prototyping in Figma, and frontend programming with HTML, CSS, and JavaScript.
+          <br><br>
+          I am dedicated to creating meaningful user experiences, with a particular interest in UX/UI design. I love bringing ideas to life and ensuring that my designs are not only aesthetically pleasing but also intuitive and functional. With a keen eye for detail, I strive to deliver high-quality work that addresses user needs and captures the essence of a brand. <br>
+          <br>
+          Teamwork is essential to my approach, as I believe that collaboration and challenging each other’s ideas lead to the best outcomes. I am seeking an internship where I can delve deeper into learning, explore new techniques in UX/UI design, and gain practical experience while pushing the boundaries of design to create valuable solutions for users.
+          <br><br>
+          I enjoy the creative process, from the initial sketch to the final user interface, finding inspiration in the balance between aesthetics and functionality to craft exceptional user experiences.
+        </p>
+        <Linkedbtn/>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Desktop Layout -->
+  <div class="hidden lg:block">
+    <div class="flex items-center">
+      <h2 class="text-5xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">Who </h2>
+      <h2 class="font-serif text-2xl md:text-l mb-0 lowercase ml-3 pt-32 pb-0" style="color: #FFDA03;">am I in the digital landscape? .. and what are my aspirations?</h2>
+    </div>
+
+    <div class="flex flex-wrap h-auto gap-4 ml-24 pt-10">
+      <div class="flex flex-col justify-end items-center">
+        <p class="max-w-lg flex-grow">I am a multimedia design student in my 3rd semester at KEA, driven by a lifelong passion for art and design. Through my studies, I have developed skills in digital design methods, gaining experience in user-oriented web solutions, prototyping in Figma, and frontend programming with HTML, CSS, and JavaScript.
+          <br><br>
+          I am dedicated to creating meaningful user experiences, with a particular interest in UX/UI design. I love bringing ideas to life and ensuring that my designs are not only aesthetically pleasing but also intuitive and functional. With a keen eye for detail, I strive to deliver high-quality work that addresses user needs and captures the essence of a brand. <br>
+          <br>
+          Teamwork is essential to my approach, as I believe that collaboration and challenging each other’s ideas lead to the best outcomes. I am seeking an internship where I can delve deeper into learning, explore new techniques in UX/UI design, and gain practical experience while pushing the boundaries of design to create valuable solutions for users.
+          <br><br>
+          I enjoy the creative process, from the initial sketch to the final user interface, finding inspiration in the balance between aesthetics and functionality to craft exceptional user experiences.
+         </p>
+        <div>Linkedbtn</div>
+      </div>
+      
+      <div class="flex justify-center md:items-center items-start">  
+        <Blob class="ml-4"/> <!-- Adjust margin if necessary -->
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<div class=" bg-white -mt-100 h-130">
-  <h2 class="text-4xl md:text-l mb-0 uppercase ml-24 pt-24 pb-28" style="color: #6E744C;">Skills</h2>
+
+<div class=" bg-white mt-20 h-130">
+  <h2 class="text-5xl md:text-l mb-0 uppercase ml-24 pt-24 pb-28" style="color: #6E744C;">Skills</h2>
   <div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6 pb-28">
     <div class="flex-1 max-w-[200px]"> 
        <Skill

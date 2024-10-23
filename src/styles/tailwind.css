@@ -29,6 +29,12 @@
   .custom-white-bg {
     background-color:chocolate;
   }
+  /* @media (max-width: 768px) {
+    .custom-white-bg {
+        display: none;
+    }
+  } */
+
   /************ fonts ********************/
   body {
     @apply font-poppins;
