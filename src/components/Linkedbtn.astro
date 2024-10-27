@@ -2,81 +2,65 @@
 
 ---
 <div id="linkedbtn">
-    <a href="https://www.linkedin.com/in/charlotte-k-187b9b2a" target="_blank">
-      <button id="waveButton" class="relative overflow-hidden bg-white font-poppins rounded-full py-3 px-8 mt-10 hover-effect" style="color: #6E744C">
-        Find me on LinkedIn!
-        <span class="liquid"></span>
-      </button>
-    </a>
+  <a href="https://www.linkedin.com/in/charlotte-k-187b9b2a" target="_blank">
+    <button id="waveButton" class="relative overflow-hidden bg-white font-poppins rounded-full py-3 px-8 mt-10" style="color: #6E744C">
+      Find me on LinkedIn!
+      <span class="liquid"></span>
+    </button>
+  </a>
 </div>
-  
-  
 
 <style>
 #linkedbtn {
-  display: inline-block;
-}
-
-.hover-effect {
   position: relative;
   display: inline-block;
-  z-index: 1;
-  transition: color 0.5s ease;
-  overflow: hidden;
-}
-
-.hover-effect:hover {
-  color: white;
 }
 
 .liquid {
   position: absolute;
-  bottom: -100%; /* Starts below the button */
+  bottom: 0;
   left: 50%;
-  width: 200%;
-  height: 300%;
-  background: #6E744C;
-  z-index: -1;
-  border-radius: 45%;
-  transform-origin: center;
-  pointer-events: none;
-  transition: transform 1s ease, left 0.3s ease; /* Smooth fill and mouse tracking */
+  width: 100%;
+  height: 50%; /* Initial height */
+  background: rgba(33, 173, 103, 0.1); /* Color of the liquid effect */
+  transform: translateX(-50%);
+  transition: height 0.3s ease; /* Smooth transition */
+  border-radius: 50%; /* Rounded edges */
+  pointer-events: none; /* Prevent pointer events on the liquid */
+  z-index: 0; /* Ensure it stays behind the button text */
 }
 
-.hover-effect:hover .liquid {
-  transform: translateY(-100%); /* Fill up on hover */
+button {
+  position: relative; /* Ensure the button has a position context for the liquid */
+  z-index: 1; /* Ensure button text stays above the liquid */
 }
 
-.liquid.leave {
-  transition: transform 1.5s ease; /* Slow disappearance */
-  transform: translateY(100%); /* Move liquid down on mouse leave */
+button:hover .liquid {
+  height: 80%; /* Fill effect on hover */
 }
-</style>
+
+  </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('#waveButton');
-    const liquid = button.querySelector('.liquid');
-  
-    // Mouse move effect to adjust liquid horizontally based on mouse position
-    button.addEventListener('mousemove', (e) => {
-      const rect = button.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const offsetX = (mouseX / button.offsetWidth) * 100;
-  
-      liquid.style.left = `${offsetX}%`; // Move the liquid horizontally
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("waveButton");
+    const liquid = button.querySelector(".liquid");
+
+    button.addEventListener("mousemove", (e) => {
+      const { width } = button.getBoundingClientRect();
+      const mouseX = e.clientX - button.getBoundingClientRect().left;
+      const fillPercentage = mouseX / width; // Get fill percentage based on mouse position
+      liquid.style.height = `${50 + 30 * fillPercentage}%`; // Fill more based on mouse position
     });
-  
-    // Mouse enter: trigger liquid filling
-    button.addEventListener('mouseenter', () => {
-      liquid.classList.remove('leave');
-      liquid.style.transform = 'translateY(-100%)'; // Liquid fills up
+
+    button.addEventListener("mouseleave", () => {
+      liquid.style.height = '50%'; // Reset height on mouse leave
     });
-  
-    // Mouse leave: trigger liquid disappearing
-    button.addEventListener('mouseleave', () => {
-      liquid.classList.add('leave');
-      liquid.style.transform = 'translateY(100%)'; // Liquid moves down and disappears
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      window.open("https://www.linkedin.com/in/charlotte-k-187b9b2a", "_blank"); // Open LinkedIn in a new tab
     });
   });
-  </script>
+</script>
+
