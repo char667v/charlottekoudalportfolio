@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets'; 
-import animationImage from "../images/animation.webp"; 
 import atkImage from "../images/atk.webp"; 
 import dcdImage from "../images/dcd.webp"; 
 import itmvImage from "../images/itmv.webp"; 
@@ -14,12 +13,6 @@ import portfolioImage from "../images/portfolio.webp";
             </article>
         </div>
 
-        <!-- <div class="cards cursor-grab absolute" style="top: -48px; left: 75.6%;" data-url="https://atk-website.netlify.app/">
-            <article id="card2">
-                <Image src={animationImage} alt="Cover for mit Arbejdernes Tennis Klub" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[60%] md:w-[250px] h-auto" />
-            </article>
-        </div> -->
-
         <div class="cards cursor-grab absolute" style="top: -38px; left: 45%;" data-url="https://digitalskraldedaggr4.netlify.app">
             <article id="card3">
                 <Image src={dcdImage} alt="Cover for Digital cleanup day" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[90%] md:w-[500px] h-auto" />
@@ -32,41 +25,12 @@ import portfolioImage from "../images/portfolio.webp";
             </article>
         </div>
 
-        <!-- <div class="cards cursor-grab absolute" style="top: 53px; left: 7%;" data-url="https://your-link-here.com">
+        <div class="cards cursor-grab absolute" style="top: 53px; left: 7%;" data-url="https://mymuseum.netlify.app/">
             <article id="card5">
                 <Image src={portfolioImage} alt="Cover for min portfolio" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[40%] md:w-[150px] h-auto" />
             </article>
-        </div> -->
+        </div>
     </div>
 </div>
 
-<style>
-    .drag-area {
-        height: 10vh;
-        width: 100vw;
-        position: relative;
-    }
-    .cards {
-        position: absolute;
-    }
-    @media (max-width: 768px) {
-    .drag-area {
-        height: 2vh;
-    }
-    }
-</style>
-
-<script>
-  const draggable = document.getElementById("your-draggable-element-id") as HTMLElement; // Cast to HTMLElement
-
-// Example of using offsetHeight and offsetWidth
-newY = Math.max(0, Math.min(newY, dragAreaRect.height - (draggable as HTMLElement).offsetHeight));
-newX = Math.max(0, Math.min(newX, dragAreaRect.width - (draggable as HTMLElement).offsetWidth));
-
-// Using style
-draggable.style.top = newY + 'px';
-draggable.style.left = newX + 'px';
-draggable.style.cursor = 'grabbing'; // Change cursor on grab
-
-</script>
 
