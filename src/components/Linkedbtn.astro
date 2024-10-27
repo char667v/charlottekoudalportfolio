@@ -2,9 +2,9 @@
 
 ---
 <div id="linkedbtn">
-    <a href="your linked in" target="_blank">
+    <a href="https://www.linkedin.com/in/charlotte-k-187b9b2a" target="_blank">
       <button id="waveButton" class="relative overflow-hidden bg-white font-poppins rounded-full py-3 px-8 mt-10 hover-effect" style="color: #6E744C">
-        Find mig på LinkedIn!
+        Find me on LinkedIn!
         <span class="liquid"></span>
       </button>
     </a>
@@ -51,32 +51,32 @@
   transition: transform 1.5s ease; /* Slow disappearance */
   transform: translateY(100%); /* Move liquid down on mouse leave */
 }
-
 </style>
 
 <script>
-const button = document.querySelector('#waveButton');
-const liquid = button.querySelector('.liquid');
-
-// Mouse move effect to adjust liquid horizontally based on mouse position
-button.addEventListener('mousemove', (e) => {
-  const rect = button.getBoundingClientRect();
-  const mouseX = e.clientX - rect.left;
-  const offsetX = (mouseX / button.offsetWidth) * 100;
-
-  liquid.style.left = `${offsetX}%`; // Move the liquid horizontally
-});
-
-// Mouse enter: trigger liquid filling
-button.addEventListener('mouseenter', () => {
-  liquid.classList.remove('leave');
-  liquid.style.transform = 'translateY(-100%)'; // Liquid fills up
-});
-
-// Mouse leave: trigger liquid disappearing
-button.addEventListener('mouseleave', () => {
-  liquid.classList.add('leave');
-  liquid.style.transform = 'translateY(100%)'; // Liquid moves down and disappears
-});
-
-</script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('#waveButton');
+    const liquid = button.querySelector('.liquid');
+  
+    // Mouse move effect to adjust liquid horizontally based on mouse position
+    button.addEventListener('mousemove', (e) => {
+      const rect = button.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const offsetX = (mouseX / button.offsetWidth) * 100;
+  
+      liquid.style.left = `${offsetX}%`; // Move the liquid horizontally
+    });
+  
+    // Mouse enter: trigger liquid filling
+    button.addEventListener('mouseenter', () => {
+      liquid.classList.remove('leave');
+      liquid.style.transform = 'translateY(-100%)'; // Liquid fills up
+    });
+  
+    // Mouse leave: trigger liquid disappearing
+    button.addEventListener('mouseleave', () => {
+      liquid.classList.add('leave');
+      liquid.style.transform = 'translateY(100%)'; // Liquid moves down and disappears
+    });
+  });
+  </script>
