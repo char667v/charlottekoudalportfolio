@@ -5,6 +5,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors: {
+			primaryone:'000000', /* sort */
 			primary: '#6E744C',/* grøn */
 			secondary: '#FBDEB7', /* gul agtig */
 			accent: '#FFDA03',/* neon gul */
