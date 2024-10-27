@@ -3,34 +3,33 @@ import { Image } from 'astro:assets';
 import atkImage from "../images/atk.webp"; 
 import dcdImage from "../images/dcd.webp"; 
 import itmvImage from "../images/itmv.webp"; 
-import portfolioImage from "../images/portfolio.webp"; 
 ---
 <div class="photos-section mt-2">
     <div class="drag-area">
-        <div class="cards cursor-grab absolute" style="top: 475px; left: 5%;" data-url="https://atk-website.netlify.app/">
-            <article id="card1">
-                <Image src={atkImage} alt="Cover for mit Arbejdernes Tennis Klub" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[60%] md:w-[300px] h-auto" />
-            </article>
-        </div>
-
-        <div class="cards cursor-grab absolute" style="top: 512px; left: 45%;" data-url="https://digitalskraldedaggr4.netlify.app">
-            <article id="card3">
-                <Image src={dcdImage} alt="Cover for Digital cleanup day" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[90%] md:w-[500px] h-auto" />
-            </article>
-        </div>
-
-        <div class="cards cursor-grab absolute" style="top: 550px; left: 15%;" data-url="https://your-link-here.com">
+        <div class="cards cursor-grab absolute" style="top: 475px; left: 5%;">
+           <a href="https://www.linkedin.com/in/charlotte-k-187b9b2a" target="_blank">
             <article id="card4">
-                <Image src={itmvImage} alt="Cover for I tråd med verden" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[50%] md:w-[200px] h-auto" />
+                <Image src={itmvImage} alt="Cover for I tråd med verden" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,218,3,0.8)] w-[60%] md:w-[300px] h-auto" />
             </article>
+           </a>
         </div>
 
-        <div class="cards cursor-grab absolute" style="top: 853px; left: -3%;" data-url="https://mymuseum.netlify.app/">
-            <article id="card5">
-                <Image src={portfolioImage} alt="Cover for min portfolio" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,255,0,0.8)] w-[40%] md:w-[150px] h-auto" />
+        <div class="cards cursor-grab absolute" style="top: 512px; left: 45%;">
+           <a href="https://digitalskraldedaggr4.netlify.app/" target="_blank">
+            <article id="card3">
+                <Image src={dcdImage} alt="Cover for Digital cleanup day" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,218,3,0.8)] w-[90%] md:w-[500px] h-auto" />
             </article>
+           </a>
         </div>
-    </div>
+
+        <div class="cards cursor-grab absolute" style="top: 550px; left: 15%;">
+           <a href="https://atk-website.netlify.app/" target="_blank">
+            <article id="card1">
+                <Image src={atkImage} alt="Cover for mit Arbejdernes Tennis Klub" class="rounded-lg transition-all duration-300 hover:grayscale-0 shadow-[0_4px_15px_rgba(255,218,3,0.8)] w-[50%] md:w-[200px] h-auto" />
+            </article>
+          </a>
+        </div>
+     </div>
 </div>
 
 

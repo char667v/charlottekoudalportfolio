@@ -27,7 +27,7 @@
   }
   
   .custom-white-bg {
-    background-color:chocolate;
+    background-color:#eaeaea;
   }
   /* @media (max-width: 768px) {
     .custom-white-bg {
@@ -37,7 +37,7 @@
 
   /************ fonts ********************/
   body {
-    @apply font-poppins;
+    @apply font-serif;
   }
   
   h2 {

@@ -14,7 +14,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				poppins: ['Poppins', 'sans-serif'],
+				/* poppins: ['Poppins', 'sans-serif'], */
 				serif: ['Lora', 'serif'],
 			},
 			spacing: {
