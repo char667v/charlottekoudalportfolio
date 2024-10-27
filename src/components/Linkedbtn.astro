@@ -3,9 +3,9 @@
 ---
 <div id="linkedbtn">
   <a href="https://www.linkedin.com/in/charlotte-k-187b9b2a" target="_blank">
-    <button id="waveButton" class="relative overflow-hidden bg-white rounded-full py-3 px-8 mt-10" style="color: #000000">
+    <button id="waveButton" class="relative overflow-hidden bg-white rounded-full py-5 px-10 mt-20 text-2xl" style="color: #000000">
       Find me on LinkedIn!
-      <span class="liquid"></span>
+      <span class="liquid -mt-7"></span>
     </button>
   </a>
 </div>
@@ -20,11 +20,12 @@
 
 .liquid {
   position: absolute;
-  bottom: 0;
+  bottom: -10;
   left: 50%;
+  height: 0; 
   background: rgba(255,218,3,0.8); /* Color of the liquid effect */
   transform: translateX(-50%);
-  transition: height 0.6s ease; /* Smooth transition */
+  transition: height 0.8s ease; /* Smooth transition */
   border-radius: 100%; /* Rounded edges */
   pointer-events: none; /* Prevent pointer events on the liquid */
   z-index: -10; /* Ensure it stays behind the button text */
