@@ -1,5 +1,4 @@
 ---
-
 ---
 <!DOCTYPE html>
 <html lang="da">
@@ -28,8 +27,6 @@
     <!-- Header -->
     <header :class="scrolled ? 'scrolled' : 'bg-transparent'" class="fixed top-0 left-0 w-full z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">
-        
-
             <!-- Logo -->
             <a href="/" class="flex-1 lg:flex-none text-center lg:text-left">
                 <div id="logo" class="flex justify-center lg:justify-start items-center ml-10 lg:ml-0">
@@ -56,29 +53,28 @@
 
         <!-- Mobile Menu (visible when showMenu is true) -->
         <nav x-show="showMenu"
-     x-transition:enter="transition ease-out duration-500"
-     x-transition:enter-start="opacity-0 transform -translate-y-full"
-     x-transition:enter-end="opacity-100 transform translate-y-0"
-     x-transition:leave="transition ease-in-out duration-500"
-     x-transition:leave-start="opacity-100 transform translate-y-0"
-     x-transition:leave-end="opacity-0 transform -translate-y-full"
-     class="lg:hidden bg-[#ffffffe9] w-full py-2">
-    <ul class="flex flex-col items-left ml-24 mt-12 mb-12 space-y-8">
-        <li>
-            <a href="/" class="text-#ffffff text-2xl hover:text-accent transition">Projects</a>
-        </li>
-        <li>
-            <a href="/" class="text-#ffffff text-2xl hover:text-accent transition">About</a>
-        </li>
-        <li>
-            <a href="/" class="text-#ffffff text-2xl hover:text-accent transition">Skills</a>
-        </li>
-        <li>
-            <a href="/" class="text-#ffffff text-2xl hover:text-accent transition">Contact</a>
-        </li>
-    </ul>
-</nav>
-
+             x-transition:enter="transition ease-out duration-500"
+             x-transition:enter-start="opacity-0 transform -translate-y-full"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in-out duration-500"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-full"
+             class="lg:hidden bg-white w-full py-2"> <!-- Set to opaque white -->
+            <ul class="flex flex-col items-left ml-24 mt-12 mb-12 space-y-8">
+                <li>
+                    <a href="/" class="text-black text-2xl hover:text-accent transition">Projects</a> <!-- Ensure text color contrasts -->
+                </li>
+                <li>
+                    <a href="/" class="text-black text-2xl hover:text-accent transition">About</a>
+                </li>
+                <li>
+                    <a href="/" class="text-black text-2xl hover:text-accent transition">Skills</a>
+                </li>
+                <li>
+                    <a href="/" class="text-black text-2xl hover:text-accent transition">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 </body>
 </html>
