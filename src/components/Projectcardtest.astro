@@ -57,56 +57,16 @@ import portfolioImage from "../images/portfolio.webp";
 </style>
 
 <script>
-    const draggables = document.querySelectorAll('.cards');
+  const draggable = document.getElementById("your-draggable-element-id") as HTMLElement; // Cast to HTMLElement
 
-    draggables.forEach(draggable => {
-        let linkUrl = draggable.getAttribute('data-link'); // Get link from data attribute
-        let isDragging = false; // Track dragging state
+// Example of using offsetHeight and offsetWidth
+newY = Math.max(0, Math.min(newY, dragAreaRect.height - (draggable as HTMLElement).offsetHeight));
+newX = Math.max(0, Math.min(newX, dragAreaRect.width - (draggable as HTMLElement).offsetWidth));
 
-        draggable.addEventListener('mousedown', (e) => {
-            e.preventDefault(); // Prevent default behavior to avoid text selection
+// Using style
+draggable.style.top = newY + 'px';
+draggable.style.left = newX + 'px';
+draggable.style.cursor = 'grabbing'; // Change cursor on grab
 
-            const dragArea = document.querySelector('.drag-area');
-            const dragAreaRect = dragArea.getBoundingClientRect();
-
-            // Set offsets relative to the mouse position
-            const offsetX = e.clientX - draggable.getBoundingClientRect().left;
-            const offsetY = e.clientY - draggable.getBoundingClientRect().top;
-
-            draggable.style.cursor = 'grabbing'; // Change cursor on grab
-
-            // Update position immediately on mouse move
-            function mouseMoveHandler(e) {
-                isDragging = true; // Set dragging state to true
-
-                // Calculate new position
-                let newX = e.clientX - offsetX; // Adjust for drag area position
-                let newY = e.clientY - offsetY; // Adjust for drag area position
-
-                // Constrain the position within the drag area
-                newX = Math.max(0, Math.min(newX, dragAreaRect.width - draggable.offsetWidth));
-                newY = Math.max(0, Math.min(newY, dragAreaRect.height - draggable.offsetHeight));
-
-                draggable.style.left = newX + 'px';
-                draggable.style.top = newY + 'px';
-            }
-
-            function mouseUpHandler() {
-                draggable.style.cursor = 'grab'; // Reset cursor
-                document.removeEventListener('mousemove', mouseMoveHandler);
-                document.removeEventListener('mouseup', mouseUpHandler);
-
-                // Check if it was a click, if not, do not open the link
-                if (!isDragging) {
-                    window.open(linkUrl, '_blank'); // Open the link in a new tab
-                }
-                isDragging = false; // Reset dragging state
-            }
-
-            // Immediately start moving on mousedown
-            document.addEventListener('mousemove', mouseMoveHandler);
-            document.addEventListener('mouseup', mouseUpHandler);
-        });
-    });
 </script>
 

@@ -43,10 +43,10 @@ button:hover .liquid {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("waveButton");
-    const liquid = button.querySelector(".liquid");
+    const button = document.getElementById("waveButton") as HTMLElement; // Cast to HTMLElement
+    const liquid = button.querySelector(".liquid") as HTMLElement; // Cast to HTMLElement
 
-    button.addEventListener("mousemove", (e) => {
+    button.addEventListener("mousemove", (e: MouseEvent) => { // Explicitly typing the event
       const { width } = button.getBoundingClientRect();
       const mouseX = e.clientX - button.getBoundingClientRect().left;
       const fillPercentage = mouseX / width; // Get fill percentage based on mouse position
@@ -57,10 +57,11 @@ button:hover .liquid {
       liquid.style.height = '50%'; // Reset height on mouse leave
     });
 
-    button.addEventListener("click", (e) => {
+    button.addEventListener("click", (e: MouseEvent) => {
       e.preventDefault(); // Prevent default anchor behavior
       window.open("https://www.linkedin.com/in/charlotte-k-187b9b2a", "_blank"); // Open LinkedIn in a new tab
     });
   });
 </script>
+
 
