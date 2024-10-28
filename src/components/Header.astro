@@ -1,4 +1,5 @@
 ---
+
 ---
 <!DOCTYPE html>
 <html lang="da">
@@ -6,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsiv Header Menu</title>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer is:inline></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -36,10 +37,10 @@
 
             <!-- Desktop Menu (visible on large screens) -->
             <nav class="hidden lg:flex space-x-24 ml-6">
-                <a href="/" class="text-primary text-1xl hover:text-accent transition">Projects</a>
-                <a href="/" class="text-primary text-1xl hover:text-accent transition">About</a>
-                <a href="/" class="text-primary text-1xl hover:text-accent transition">Skills</a>
-                <a href="/" class="text-primary text-1xl hover:text-accent transition">Contact</a>
+                <a href="#hero" class="text-primary text-1xl hover:text-accent transition">Projects</a>
+                <a href="#aboutme" class="text-primary text-1xl hover:text-accent transition">About</a>
+                <a href="#myskills" class="text-primary text-1xl hover:text-accent transition">Skills</a>
+                <a href="#contact" class="text-primary text-1xl hover:text-accent transition">Contact</a>
             </nav>
 
             <!-- Burger Menu for mobile -->
@@ -56,25 +57,23 @@
              x-transition:enter="transition ease-out duration-500"
              x-transition:enter-start="opacity-0 transform -translate-y-full"
              x-transition:enter-end="opacity-100 transform translate-y-0"
-             x-transition:leave="transition ease-in-out duration-500"
-             x-transition:leave-start="opacity-100 transform translate-y-0"
-             x-transition:leave-end="opacity-0 transform -translate-y-full"
-             class="lg:hidden bg-white w-full py-2"> <!-- Set to opaque white -->
+             class="lg:hidden bg-white w-full py-2">
             <ul class="flex flex-col items-left ml-24 mt-12 mb-12 space-y-8">
                 <li>
-                    <a href="/" class="text-black text-2xl hover:text-accent transition">Projects</a> <!-- Ensure text color contrasts -->
+                    <a href="#hero" @click="showMenu = false" class="text-black text-2xl hover:text-accent transition">Projects</a>
                 </li>
                 <li>
-                    <a href="/" class="text-black text-2xl hover:text-accent transition">About</a>
+                    <a href="#aboutme" @click="showMenu = false" class="text-black text-2xl hover:text-accent transition">About</a>
                 </li>
                 <li>
-                    <a href="/" class="text-black text-2xl hover:text-accent transition">Skills</a>
+                    <a href="#myskills" @click="showMenu = false" class="text-black text-2xl hover:text-accent transition">Skills</a>
                 </li>
                 <li>
-                    <a href="/" class="text-black text-2xl hover:text-accent transition">Contact</a>
+                    <a href="#contact" @click="showMenu = false" class="text-black text-2xl hover:text-accent transition">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 </body>
 </html>
+

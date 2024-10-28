@@ -34,6 +34,12 @@
     pointer-events: none; /* Allow clicks to pass through */
 }
 
+#skillsbg {
+  position: relative; /* Eller absolute hvis du vil have den til at flytte uafhængigt */
+  top: 200px; /* Juster til en negativ værdi for at flytte den op */
+}
+
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .custom-skill-bg {
