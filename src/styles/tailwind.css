@@ -22,7 +22,7 @@
   @media (max-width: 768px) {
     .custom-skill-bg {
       background-size: auto, contain;  /* Change to 'contain' for better scaling on mobile */
-      background-attachment: scroll;   /* Disable fixed background to avoid mobile issues */
+     /*  background-attachment: scroll;  */  /* Disable fixed background to avoid mobile issues */
     }
   }
   
