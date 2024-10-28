@@ -4,13 +4,13 @@ const { imageSrc, altText, headline, paragraphText } = Astro.props;
 ---
 
 <div class="flex flex-col items-center justify-center p-4">
-  <div class="w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] mb-2">
+  <div class="w-[110px] h-[110px] sm:w-[90px] sm:h-[90px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] mb-2">
     <img src={imageSrc} alt={altText} class="object-contain" />
   </div>
 
   <h3 class="sm:text-lg md:text-base font-semibold m-0 mb-4 pt-8">{headline}</h3>
 
-  <p class="text-left text-sm font-serif max-w-[200px] sm:max-w-[225px] md:max-w-[250px] m-0">
+  <p class="text-left text-base font-serif max-w-[200px] sm:max-w-[225px] md:max-w-[250px] m-0">
     {paragraphText}
   </p>
 </div>

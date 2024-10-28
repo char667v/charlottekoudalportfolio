@@ -10,7 +10,7 @@ import Upbtn from "../components/Upbtn.astro";
 <MainLayout title="CKbyKoudal">
   <div class=" main">
   <!-- hero section -->
-    <!-- hero section -->
+  <section id="hero">
     <div>
       <p class="pt-40 md:pt-48 ml-[2.4rem] md:ml-[6.4rem] text-primary"> Charlotte Koudal MMD KEA</p>
       <h1 class="text-5xl md:text-8xl mb-0 uppercase ml-[2.4rem] md:ml-24">Multimedia Design Student</h1>
@@ -18,27 +18,26 @@ import Upbtn from "../components/Upbtn.astro";
       <h4 class="ml-[2.4rem] md:ml-[6.4rem] text-sm">Or click at recent projects.</h4>
       <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-[2.2rem] ml-52 md:ml-58 transform scale-y-[1] scale-x-[-1] -rotate-45">
     </div>
+  </section>
 
 <!-- Projectcard section -->
-<div>
-  <Projectcardtest/>
-</div>
-
+  <section id="projects">
+    <div>
+     <Projectcardtest/>
+    </div>
+  </section>
+  
 <!-- bg white -->
 <div class="custom-white-bg h-12 mt-44 border-block-end-width"></div>
 
-<!-- Skill bg -->
-<!-- <div class="custom-skill-bg h-24 -mt-24"> -->
-
-</div>
-
 <!-- About section -->
+<section id="aboutme">
 <div class="grid grid-cols-1 lg:grid-cols-2 pt-10 md:pb-32 pb-20 px-8 md:px-16 lg:px-32 xl:px-64 md:gap-10 gap-6">
   
   <!-- Mobile Layout -->
   <div class="block lg:hidden">
     <div class="flex justify-center items-center pt-0">
-      <h2 class="text-5xl md:text-4xl mb-0 uppercase ml-[0.4rem] -mt-4 text-primary">Who</h2>
+      <h2 class="text-5xl md:text-4xl mb-0 uppercase -ml-[2.1rem] -mt-4 text-primary">Who</h2>
       <h2 class="font-serif text-2xl md:text-4xl mb-0 lowercase ml-4 mt-0 text-white">
         am <span style="text-transform: uppercase;">I</span> and what are my aspirations?
       </h2>
@@ -72,7 +71,7 @@ import Upbtn from "../components/Upbtn.astro";
       <h2 class="font-serif text-2xl md:text-l mb-0 lowercase ml-3 pt-32 pb-0" style="color: #FFDA03;">am I in the digital landscape? .. and what are my aspirations?</h2>
     </div>
 
-    <div class="flex flex-wrap h-auto gap-4 ml-24 pt-10">
+    <div class="flex flex-wrap h-auto gap- ml-24 pt-10">
       <div class="flex flex-col justify-end items-center">
         <p class="max-w-lg flex-grow">I am a multimedia design student in my 3rd semester at KEA, driven by a lifelong passion for art and design. Through my studies, I have developed skills in digital design methods, gaining experience in user-oriented web solutions, prototyping in Figma, and frontend programming with HTML, CSS, and JavaScript.
           <br><br>
@@ -90,54 +89,58 @@ import Upbtn from "../components/Upbtn.astro";
       </div>
     </div>
   </div>
-
 </div>
+</section>
 
-
-<div class=" bg-white mt-20 h-130">
-  <h2 class="text-5xl md:text-l mb-0 uppercase ml-24 pt-24 pb-28" style="color: #6E744C;">Skills</h2>
-  <div class="flex flex-col md:flex-row justify-center items-start space-y-36 md:space-y-0 md:space-x-6 pb-28">
-    <div class="flex-1 max-w-[200px]"> 
-       <Skill
-           imageSrc="/svg/figmasort.svg"
-           alt="Figma icon"
-           altText="foto"
-           headline="Figma"
-           paragraphText="Figma er min trofaste ven hvor jeg nemt kan lave wireframes og prototyper som er overskuelige og visuelt lækkert til gav for alle i fx. projektarbejde." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
-       <Skill
-           imageSrc="/svg/cc.svg"
-           alt="Adobe Creative Cloud"
-           altText="foto"
-           headline="Adobe CC"
-           paragraphText="I Adobe pakken bruger jeg mest programmerne Photoshop og Illustrator til billedredigering, grafik til websites og illustrationer som logoer." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
-       <Skill
-           imageSrc="/svg/svcode.svg"
-           alt="Visual Studio Code icon"
-           altText="foto"
-           headline="Html, Css & Js"
-           paragraphText="Jeg kan også kode hjemmesider fra bunden ved hjælp af HTML 5, CSS, Javascript og Tailwind. Til det bruger jeg programmet Visual Studio Code." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
-       <Skill
-           imageSrc="/svg/codepen.svg"
-           alt="CodePen icon"
-           altText="foto"
-           headline="CodePen"
-           paragraphText="CodePen bruger jeg til at eksperimentere kreativt med design og hurtigt se resultaterne af mine HTML, CSS og JavaScript-projekter i realtid." />
-    </div>
-    <div class="flex-1 max-w-[200px]"> 
-       <Skill
-           imageSrc="/svg/chatgpt.svg"
-           alt="ChatGpt icon"
-           altText="foto"
-           headline="ChatGpt"
-           paragraphText="ChatGPT er en god inspirationskilde, som effektivt kan hjælpe med idéer til designudfordringer og tekster, mens jeg udvikler mine projekter." />
+<section id="myskills">
+  <div class="bg-white mt-20 h-auto md:h-130">
+    <h2 class="text-5xl md:text-3xl mb-0 uppercase ml-9 md:ml-[3.7rem] pt-24 pb-28" style="color: #6E744C;">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 pb-28">
+      <div class="flex flex-col items-center"> 
+        <Skill
+          imageSrc="/svg/figmasort.svg"
+          alt="Figma icon"
+          altText="foto"
+          headline="Figma"
+          paragraphText="Figma er min trofaste ven hvor jeg nemt kan lave wireframes og prototyper som er overskuelige og visuelt lækkert til gav for alle i fx. projektarbejde." />
+      </div>
+      <div class="flex flex-col items-center"> 
+        <Skill
+          imageSrc="/svg/cc.svg"
+          alt="Adobe Creative Cloud"
+          altText="foto"
+          headline="Adobe CC"
+          paragraphText="I Adobe pakken bruger jeg mest programmerne Photoshop og Illustrator til billedredigering, grafik til websites og illustrationer som logoer." />
+      </div>
+      <div class="flex flex-col items-center"> 
+        <Skill
+          imageSrc="/svg/svcode.svg"
+          alt="Visual Studio Code icon"
+          altText="foto"
+          headline="Html, Css & Js"
+          paragraphText="Jeg kan også kode hjemmesider fra bunden ved hjælp af HTML 5, CSS, Javascript og Tailwind. Til det bruger jeg programmet Visual Studio Code." />
+      </div>
+      <div class="flex flex-col items-center"> 
+        <Skill
+          imageSrc="/svg/codepen.svg"
+          alt="CodePen icon"
+          altText="foto"
+          headline="CodePen"
+          paragraphText="CodePen bruger jeg til at eksperimentere kreativt med design og hurtigt se resultaterne af mine HTML, CSS og JavaScript-projekter i realtid." />
+      </div>
+      <div class="flex flex-col items-center"> 
+        <Skill
+          imageSrc="/svg/chatgpt.svg"
+          alt="ChatGpt icon"
+          altText="foto"
+          headline="ChatGpt"
+          paragraphText="ChatGPT er en god inspirationskilde, som effektivt kan hjælpe med idéer til designudfordringer og tekster, mens jeg udvikler mine projekter." />
+      </div>
     </div>
   </div>
+</section>
+
+
 
   
 <!-- Skill bg -->
