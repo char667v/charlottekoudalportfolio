@@ -8,9 +8,11 @@ import Upbtn from "../components/Upbtn.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<MainLayout title="CKbyKoudal">
+  
+
+<MainLayout title="CKoudal">
   <div class=" main">
-  <!-- hero section -->
+  <!-- ---------- Hero section ---------- -->
   <section id="hero">
     <div>
       <p class="pt-40 md:pt-48 ml-[2.4rem] md:ml-[6.4rem] text-primary"> Charlotte Koudal MMD KEA</p>
@@ -20,8 +22,9 @@ import Footer from "../components/Footer.astro";
       <img src="/svg/linesolid3.svg" alt="curved arrow line" class="h-24 w-24 -mt-[2.2rem] ml-52 md:ml-58 transform scale-y-[1] scale-x-[-1] -rotate-45">
     </div>
   </section>
+  <h1 class="text-[#ecd14b] text-4xl break-words hyphens-auto md:px-4 sm:text-6xl md:text-6xl lg:text-[100px] font-[Display] cssanimation leBlurInRight sequence">DIGITAL DESIGNER</h1>
 
-<!-- Projectcard section -->
+<!-- ---------- Projectcard section ---------- -->
   <section id="projects">
     <div>
      <Projectcardtest/>
@@ -29,9 +32,11 @@ import Footer from "../components/Footer.astro";
   </section>
   
 <!-- bg white -->
-<div class="custom-white-bg h-12 mt-44 border-block-end-width"></div>
+<div class="custom-white-bg h-12 mt-44 border-block-end-width w-full"></div>
 
-<!-- About section -->
+<!-- ---------- About section ---------- -->
+
+
 <section id="aboutme">
 <div class="grid grid-cols-1 lg:grid-cols-2 pt-10 md:pb-32 pb-20 px-8 md:px-16 lg:px-32 xl:px-64 md:gap-10 gap-6">
   
@@ -67,7 +72,7 @@ import Footer from "../components/Footer.astro";
   <!-- Desktop Layout -->
   <div class="hidden lg:block">
     <div class="flex items-center">
-      <h2 class="text-5xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0" style="color: #6E744C;">Who </h2>
+      <h2 class="text-5xl md:text-l mb-0 uppercase ml-24 pt-28 pb-0 text-primary">Who </h2>
       <h2 class="font-serif text-2xl md:text-l mb-0 lowercase ml-3 pt-32 pb-0" style="color: #FFDA03;">am I in the digital landscape? .. and what are my aspirations?</h2>
     </div>
 
@@ -92,6 +97,7 @@ import Footer from "../components/Footer.astro";
 </div>
 </section>
 
+<!-- ---------- Skill section ---------- -->
 <section id="myskills">
   <div class="bg-white mt-20 h-auto md:h-130">
     <h2 class="text-5xl md:text-3xl mb-0 uppercase ml-9 md:ml-[3.7rem] pt-24 pb-28 text-primary">Skills</h2>
@@ -145,10 +151,10 @@ import Footer from "../components/Footer.astro";
 <div class="custom-skill-bg min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[90vh]"></div>
 </section>
 
-<!-- Contact section -->
+<!-- ---------- Contact section ---------- -->
 <section class="text-white">
 <!--   <p class="text-lg md:text-l mb-0 ml-9 text-white">Space to feel comfortable you</p> -->
-  <h2 class="text-4xl md:text-l mb-0 uppercase ml-9 pt-4  text-white">Contact</h2>
+  <h2 class="text-4xl md:text-l mb-0 uppercase ml-9 pt-4 text-primary">Contact</h2>
   
 
   <section id="contact" class="text-lg leading-9 p-8 pt-16 md:p-16 md:flex md:gap-10 md:justify-start md:items-start">
@@ -159,7 +165,6 @@ import Footer from "../components/Footer.astro";
         <p class="text-base text-white">Charlotte Koudal</p> 
         <p class="text-base text-white">+45 2962 4832</p>
         <a href="mailto:c.koudal@gmail.com" class="text-white text-base m-0 pl-6 hover:text-accent transition">c.koudal@gmail.com</a>
-       
       </div>
     </div>
   
@@ -172,15 +177,17 @@ import Footer from "../components/Footer.astro";
   </section>
 </section>
 
-
-  
-  
-  <style>
-    footer {
-        box-shadow: 0px 0px 9px rgba(41, 41, 41, 0.25);
-    }
-  </style>
   <Upbtn />
 </div>
 </MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const g = document.querySelector(".om_mig");
+      if (g) {
+          g.classList.add("animate__animated", "animate__slideInRight", "fadeInOpacity");
+      }
+  });
+</script>
+  <script type="module" src="/_astro/page.BA34ORVw.js"></script>
 
